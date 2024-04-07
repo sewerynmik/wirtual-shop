@@ -1,0 +1,48 @@
+﻿<Application x:Class="bazy3.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:bazy3"
+             xmlns:viewModel="clr-namespace:bazy3.MVVM.viewModel"
+             xmlns:view="clr-namespace:bazy3.MVVM.view"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         <ResourceDictionary>
+             <ResourceDictionary.MergedDictionaries>
+                 <ResourceDictionary Source="themes/ButtonTheme.xaml"/>
+                 <ResourceDictionary Source="themes/TextBoxTheme.xaml"/>
+                 <ResourceDictionary Source="themes/PasswordBoxTheme.xaml"/>
+                 <ResourceDictionary Source="themes/TextBlockTheme.xaml"/>
+                 <ResourceDictionary Source="themes/UserButtonTheme.xaml"/>
+                 <ResourceDictionary Source="themes/Cards.xaml"/>
+             </ResourceDictionary.MergedDictionaries>
+             
+             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                 <view:HomeView/>
+             </DataTemplate>
+             
+             <DataTemplate DataType="{x:Type viewModel:ShopViewModel}">
+                 <view:ShopView/>
+             </DataTemplate>
+             
+             <DataTemplate DataType="{x:Type viewModel:OptionsViewModel}">
+                 <view:OptionsView/>
+             </DataTemplate>
+             
+             <DataTemplate DataType="{x:Type viewModel:ChangingPassViewModel}">
+                 <view:ChangingPassView/>
+             </DataTemplate>
+             
+             <DataTemplate DataType="{x:Type viewModel:ChangingEmailViewModel}">
+                 <view:ChangingEmailView/>
+             </DataTemplate>
+             
+             <DataTemplate DataType="{x:Type viewModel:ChangePhViewModel}">
+                 <view:ChangingPHView/>
+             </DataTemplate>
+             
+             <DataTemplate DataType="{x:Type viewModel:ProfileViewModel}">
+                 <view:ProfileView/>
+             </DataTemplate>
+         </ResourceDictionary>
+    </Application.Resources>
+</Application>

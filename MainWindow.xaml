@@ -1,0 +1,110 @@
+﻿<Window x:Class="bazy3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:bazy3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="500"
+        WindowStyle="None" ResizeMode="NoResize"
+        Topmost="True" WindowStartupLocation="CenterScreen"
+        >
+    
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+            <GradientStop Color="#5bc3ff" Offset="0.0"/>
+            <GradientStop Color="#5aa0ff" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Row="1" Column="1">
+            <TextBlock Text="Podaj dane logowania"
+                       Style="{StaticResource TextBlockStyle}"/>
+        </Grid>
+        
+        <Grid Row="2" Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Text="Login:"
+                       Grid.Column="0"
+                       Style="{StaticResource TextBlockStyle}"/>
+            
+            <TextBox Grid.Column="1"
+                     Name="Login"
+                     Style="{StaticResource TextBoxStyle}"
+                     Foreground="Black"/>
+        </Grid>
+        
+        <Grid Row="3" Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Text="Hasło:"
+                       Grid.Column="0"
+                      Style="{StaticResource TextBlockStyle}"/>
+            
+            <PasswordBox Grid.Column="1"
+                     Name="Pass"
+                     Style="{StaticResource PasswordBoxStyle}">
+            </PasswordBox>
+        </Grid>
+        
+        <Grid Row="5" Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            
+            <Button Grid.Column="1" 
+                    Content="zaloguj"
+                    Foreground="White"
+                    FontSize="14"
+                    FontWeight="Medium"
+                    Click="Log"
+                    Style="{StaticResource ButtonStyle}">
+            </Button>
+            
+            <Button Grid.Column="0" 
+                    Content="anuluj"
+                    Foreground="White"
+                    FontSize="14"
+                    FontWeight="Medium"
+                    Click="Quit"
+                    Style="{StaticResource ButtonStyle}">
+            </Button>
+        </Grid>
+        
+        <Grid Grid.Row="4" Grid.Column="1">
+            <TextBlock Text="Podano nieprawidłowe dane logowania"
+                       FontSize="15"
+                       Foreground="red"
+                       Visibility="Collapsed"
+                       Style="{StaticResource TextBlockStyle}"
+                       x:Name="Info"/>
+        </Grid>
+        
+    </Grid>
+</Window>

@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{97ACFA85-7391-448C-BC96-0BF5725626EB}</ProjectGuid>
+        <OutputType>WinExe</OutputType>
+        <RootNamespace>bazy3</RootNamespace>
+        <AssemblyName>bazy3</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <WarningLevel>4</WarningLevel>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+          <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+        </Reference>
+        <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+          <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+        </Reference>
+        <Reference Include="mscorlib" />
+        <Reference Include="Oracle.ManagedDataAccess, Version=4.122.23.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+          <HintPath>..\packages\Oracle.ManagedDataAccess.23.3.2-dev\lib\net472\Oracle.ManagedDataAccess.dll</HintPath>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ComponentModel.DataAnnotations" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Formats.Asn1, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Formats.Asn1.8.0.0\lib\net462\System.Formats.Asn1.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Numerics" />
+        <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Text.Json, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Text.Json.8.0.1\lib\net462\System.Text.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Xml" />
+        <Reference Include="System.Xaml">
+            <RequiredTargetFramework>4.0</RequiredTargetFramework>
+        </Reference>
+        <Reference Include="WindowsBase" />
+        <Reference Include="PresentationCore" />
+        <Reference Include="PresentationFramework" />
+    </ItemGroup>
+    <ItemGroup>
+        <ApplicationDefinition Include="App.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <SubType>Designer</SubType>
+        </ApplicationDefinition>
+        <Compile Include="Core\ObservableObject.cs" />
+        <Compile Include="Core\RelayCommand.cs" />
+        <Compile Include="MVVM\viewModel\ChangePhViewModel.cs" />
+        <Compile Include="MVVM\viewModel\ChangingEmailViewModel.cs" />
+        <Compile Include="MVVM\viewModel\ChangingPassViewModel.cs" />
+        <Compile Include="MVVM\viewModel\ShopViewModel.cs" />
+        <Compile Include="MVVM\viewModel\HomeViewModel.cs">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Compile>
+        <Compile Include="MVVM\viewModel\MainViewModel.cs">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Compile>
+        <Compile Include="MVVM\viewModel\OptionsViewModel.cs" />
+        <Compile Include="MVVM\viewModel\ProfileViewModel.cs" />
+        <Compile Include="MVVM\view\ChangingEmailView.xaml.cs">
+          <DependentUpon>ChangingEmailView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\ChangingPassView.xaml.cs">
+          <DependentUpon>ChangingPassView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\ChangingPHView.xaml.cs">
+          <DependentUpon>ChangingPHView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\ShopView.xaml.cs">
+          <DependentUpon>ShopView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\HomeView.xaml.cs">
+          <DependentUpon>HomeView.xaml</DependentUpon>
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Compile>
+        <Compile Include="MVVM\view\OptionsView.xaml.cs">
+          <DependentUpon>OptionsView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\ProfileView.xaml.cs">
+          <DependentUpon>ProfileView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="User2.xaml.cs">
+          <DependentUpon>User2.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="UserControls\PopupUserControl.xaml.cs">
+          <DependentUpon>PopupUserControl.xaml</DependentUpon>
+        </Compile>
+        <Page Include="MainWindow.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <SubType>Designer</SubType>
+        </Page>
+        <Compile Include="App.xaml.cs">
+            <DependentUpon>App.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="MainWindow.xaml.cs">
+            <DependentUpon>MainWindow.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Page Include="MVVM\view\ChangingEmailView.xaml" />
+        <Page Include="MVVM\view\ChangingPassView.xaml" />
+        <Page Include="MVVM\view\ChangingPHView.xaml">
+          <DependentUpon>OptionsView.xaml</DependentUpon>
+        </Page>
+        <Page Include="MVVM\view\ShopView.xaml" />
+        <Page Include="MVVM\view\HomeView.xaml">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Page>
+        <Page Include="MVVM\view\OptionsView.xaml" />
+        <Page Include="MVVM\view\ProfileView.xaml" />
+        <Page Include="themes\ButtonTheme.xaml" />
+        <Page Include="themes\Cards.xaml" />
+        <Page Include="themes\PasswordBoxTheme.xaml" />
+        <Page Include="themes\TextBlockTheme.xaml" />
+        <Page Include="themes\TextBoxTheme.xaml" />
+        <Page Include="themes\UserButtonTheme.xaml" />
+        <Page Include="User2.xaml" />
+        <Page Include="UserControls\PopupUserControl.xaml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Properties\AssemblyInfo.cs">
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="Properties\Resources.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+            <DependentUpon>Resources.resx</DependentUpon>
+        </Compile>
+        <EmbeddedResource Include="Properties\Resources.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="App.config" />
+        <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Resource Include="images\icons8-gear-100.png" />
+      <Resource Include="images\icons8-home-64.png" />
+      <Resource Include="images\icons8-test-account-96.png" />
+      <Resource Include="images\icons8-exit-50.png" />
+      <Resource Include="images\anchovy.png" />
+      <Resource Include="images\clown-fish.png" />
+      <Resource Include="images\fish (1).png" />
+      <Resource Include="images\fish (2).png" />
+      <Resource Include="images\fish.png" />
+      <Resource Include="images\fishing (1).png" />
+      <Resource Include="images\fishing.png" />
+      <Resource Include="images\man.png" />
+      <Resource Include="images\seafood.png" />
+      <Resource Include="images\tuna.png" />
+      <Content Include="images\picture.png" />
+      <Content Include="Oracle.DataAccess.Common.Configuration.Section.xsd" />
+      <Content Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Data\" />
+      <Folder Include="Fonts\" />
+      <Folder Include="MVVM\model\" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+      <PropertyGroup>
+        <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+      </PropertyGroup>
+      <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+      <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    </Target>
+    <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
