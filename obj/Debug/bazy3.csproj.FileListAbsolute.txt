@@ -64,10 +64,6 @@ C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ChangingEmailView
 C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ChangingPHView.baml
 C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ProfileView.g.cs
 C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ProfileView.baml
-C:\Users\Seweryn\RiderProjects\bazy3\bazy3\bin\Debug\EntityFramework.dll
-C:\Users\Seweryn\RiderProjects\bazy3\bazy3\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Seweryn\RiderProjects\bazy3\bazy3\bin\Debug\EntityFramework.xml
-C:\Users\Seweryn\RiderProjects\bazy3\bazy3\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\themes\Cards.baml
 C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ShopView.g.cs
 C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ShopView.baml

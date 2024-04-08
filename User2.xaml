@@ -11,7 +11,8 @@
         Background="Transparent"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        Topmost="True">
+        Topmost="True"
+        MouseDown="User2_OnMouseDown">
     
     <Window.DataContext>
         <viewModel:MainViewModel/>
@@ -40,31 +41,19 @@
             <StackPanel Grid.Row="1">
                 
                 <RadioButton Content="Home"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
                              Style="{StaticResource UserMenuButton}"
                              IsChecked="True"
                              Command="{Binding HomeViewCommand}">
                 </RadioButton>
                 <RadioButton Content="Shop"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
                              Style="{StaticResource UserMenuButton}"
                              Command="{Binding DiscoveryViewCommand}">
                 </RadioButton>
                 <RadioButton Content="Options"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
                              Style="{StaticResource UserMenuButton}"
                              Command="{Binding OptionsViewCommand}">
                 </RadioButton>
                 <RadioButton Content="Profile"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
                              Style="{StaticResource UserMenuButton}"
                              Command="{Binding ProfileViewCommand}">
                     
@@ -78,6 +67,18 @@
                      Margin="5"
                      Grid.Column="1"
                      Style="{StaticResource MoodernTextBox}"/>
+            
+            
+            <Button Grid.Row="0" Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    Style="{StaticResource TurnOffButton}"
+                    Margin="0,0,60,0"
+                    Content="-"
+                    Foreground="Wheat"
+                    FontSize="50"
+                    Click="minimalise">
+                
+            </Button>
             
             <Button Grid.Row="0" Grid.Column="1"
                     HorizontalAlignment="Right"

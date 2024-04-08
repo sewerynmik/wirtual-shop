@@ -8,6 +8,7 @@
         Title="MainWindow" Height="300" Width="500"
         WindowStyle="None" ResizeMode="NoResize"
         Topmost="True" WindowStartupLocation="CenterScreen"
+        MouseDown="MainWindow_OnMouseDown"
         >
     
     <Window.Background>
@@ -18,7 +19,6 @@
     </Window.Background>
     
     <Grid>
-        
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition/>
@@ -105,6 +105,5 @@
                        Style="{StaticResource TextBlockStyle}"
                        x:Name="Info"/>
         </Grid>
-        
     </Grid>
 </Window>

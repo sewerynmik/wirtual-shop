@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using Oracle.ManagedDataAccess.Client;
 
 namespace bazy3
@@ -39,7 +40,7 @@ namespace bazy3
 
         private void Quit(object sender, RoutedEventArgs routedEventArgs)
         {
-            Close();
+            Application.Current.Shutdown();
         }
 
         private void Log(object sender, RoutedEventArgs e)
@@ -84,6 +85,12 @@ namespace bazy3
                 Console.WriteLine(exception);
                 throw;
             }
+        }
+
+        private void MainWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
         }
     }
 }

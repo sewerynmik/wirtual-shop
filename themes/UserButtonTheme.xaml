@@ -22,13 +22,23 @@
             </Setter>
             
             
+            
+            
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Foreground" Value="white"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="-5,0,0,5"/>
         </Style.Setters>
         
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
                 <Setter Property="Background" Value="#22202f"/>
+            </Trigger>
+            
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Margin" Value="0,0,0,5"/>
             </Trigger>
         </Style.Triggers>
         
