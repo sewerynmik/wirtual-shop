@@ -60,6 +60,7 @@ namespace bazy3.MVVM.view
                                 stackPanel.Children.Add(nazwa);
                                 stackPanel.Children.Add(producent);
                                 stackPanel.Children.Add(cena);
+                                
                                 stackPanel.Children.Add(ilosc);
 
                                 Style kartaStyle = (Style)this.FindResource("karta");
