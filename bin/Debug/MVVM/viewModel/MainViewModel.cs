@@ -12,6 +12,8 @@ namespace bazy3.MVVM.viewModel
 
         public RelayCommand ProfileViewCommand { get; set; }
         
+        public RelayCommand CardViewCommand { get; set; }
+        
         public HomeViewModel HomeVm { get; set; }
         
         public ShopViewModel ShopVm { get; set; }
@@ -19,6 +21,8 @@ namespace bazy3.MVVM.viewModel
         public OptionsViewModel OptionsVm { get; set; }
 
         public ProfileViewModel ProfileVm { get; set; }
+        
+        public CardViewModel CardVm { get; set; }
 
         private object _currentView;
 
@@ -42,6 +46,7 @@ namespace bazy3.MVVM.viewModel
             ShopVm = new ShopViewModel();
             OptionsVm = new OptionsViewModel();
             ProfileVm = new ProfileViewModel();
+            CardVm = new CardViewModel();
             
             CurrentView = HomeVm;
 
@@ -63,6 +68,11 @@ namespace bazy3.MVVM.viewModel
             ProfileViewCommand = new RelayCommand(p =>
             {
                 CurrentView = ProfileVm;
+            });
+
+            CardViewCommand = new RelayCommand(p =>
+            {
+                CurrentView = CardVm;
             });
         }
     }

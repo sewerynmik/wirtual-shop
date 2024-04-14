@@ -34,10 +34,11 @@ namespace bazy3.MVVM.view
                         {
                             CardList.Add(new CardData
                             {
-                                Nazwa = reader.GetString(0),
-                                Producent = reader.GetString(1),
-                                Cena = reader.GetDecimal(2),
-                                Ilosc = reader.GetInt32(3)
+                                Id = reader.GetInt32(0),
+                                Nazwa = reader.GetString(1),
+                                Producent = reader.GetString(2),
+                                Cena = reader.GetDecimal(3),
+                                Ilosc = reader.GetInt32(4)
                             });
                         }
                     }
@@ -48,10 +49,23 @@ namespace bazy3.MVVM.view
                 MessageBox.Show(exception.Message);
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int id = (int)((Button)sender).CommandParameter;
+
+            App.ShopBag.Add(id);
+
+            for (int i = App.ShopBag.Count - 1; i >= 0; i--)
+            {
+                Console.WriteLine(App.ShopBag[i]);
+            }
+        }
     }
 
     public class CardData
     {
+        public int Id { get; set; }
         public string Nazwa { get; set; }
         public string Producent { get; set; }
         public decimal Cena { get; set; }

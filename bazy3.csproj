@@ -13,6 +13,7 @@
         <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
         <WarningLevel>4</WarningLevel>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <LangVersion>preview</LangVersion>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +35,12 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+          <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net48\FontAwesome.Sharp.dll</HintPath>
+        </Reference>
+        <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
+          <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
+        </Reference>
         <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
           <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
         </Reference>
@@ -76,6 +83,7 @@
         <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
           <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
         </Reference>
+        <Reference Include="System.Windows.Forms" />
         <Reference Include="System.Xml" />
         <Reference Include="System.Xaml">
             <RequiredTargetFramework>4.0</RequiredTargetFramework>
@@ -91,6 +99,7 @@
         </ApplicationDefinition>
         <Compile Include="Core\ObservableObject.cs" />
         <Compile Include="Core\RelayCommand.cs" />
+        <Compile Include="MVVM\viewModel\CardViewModel.cs" />
         <Compile Include="MVVM\viewModel\ChangePhViewModel.cs" />
         <Compile Include="MVVM\viewModel\ChangingEmailViewModel.cs" />
         <Compile Include="MVVM\viewModel\ChangingPassViewModel.cs" />
@@ -103,6 +112,9 @@
         </Compile>
         <Compile Include="MVVM\viewModel\OptionsViewModel.cs" />
         <Compile Include="MVVM\viewModel\ProfileViewModel.cs" />
+        <Compile Include="MVVM\view\CardView.xaml.cs">
+          <DependentUpon>CardView.xaml</DependentUpon>
+        </Compile>
         <Compile Include="MVVM\view\ChangingEmailView.xaml.cs">
           <DependentUpon>ChangingEmailView.xaml</DependentUpon>
         </Compile>
@@ -125,6 +137,9 @@
         <Compile Include="MVVM\view\ProfileView.xaml.cs">
           <DependentUpon>ProfileView.xaml</DependentUpon>
         </Compile>
+        <Compile Include="MVVM\view\TestView.xaml.cs">
+          <DependentUpon>TestView.xaml</DependentUpon>
+        </Compile>
         <Compile Include="User2.xaml.cs">
           <DependentUpon>User2.xaml</DependentUpon>
         </Compile>
@@ -143,6 +158,7 @@
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Page Include="MVVM\view\CardView.xaml" />
         <Page Include="MVVM\view\ChangingEmailView.xaml" />
         <Page Include="MVVM\view\ChangingPassView.xaml" />
         <Page Include="MVVM\view\ChangingPHView.xaml">
@@ -154,6 +170,7 @@
         </Page>
         <Page Include="MVVM\view\OptionsView.xaml" />
         <Page Include="MVVM\view\ProfileView.xaml" />
+        <Page Include="MVVM\view\TestView.xaml" />
         <Page Include="themes\ButtonTheme.xaml" />
         <Page Include="themes\Cards.xaml" />
         <Page Include="themes\PasswordBoxTheme.xaml" />

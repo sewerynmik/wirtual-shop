@@ -43,6 +43,10 @@
              <DataTemplate DataType="{x:Type viewModel:ProfileViewModel}">
                  <view:ProfileView/>
              </DataTemplate>
+             
+             <DataTemplate DataType="{x:Type viewModel:CardViewModel}">
+                 <view:CardView/>
+             </DataTemplate>
          </ResourceDictionary>
     </Application.Resources>
 </Application>

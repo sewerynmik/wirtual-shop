@@ -67,3 +67,10 @@ C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ProfileView.baml
 C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\themes\Cards.baml
 C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ShopView.g.cs
 C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ShopView.baml
+C:\Users\Seweryn\RiderProjects\bazy3\bazy3\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Seweryn\RiderProjects\bazy3\bazy3\bin\Debug\FontAwesome.WPF.dll
+C:\Users\Seweryn\RiderProjects\bazy3\bazy3\bin\Debug\FontAwesome.WPF.xml
+C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\TestView.baml
+C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\TestView.g.cs
+C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\CardView.g.cs
+C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\CardView.baml
