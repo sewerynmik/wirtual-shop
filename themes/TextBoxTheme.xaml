@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+
     <Style TargetType="TextBox" x:Key="TextBoxStyle">
         <Setter Property="Template">
             <Setter.Value>
@@ -8,9 +8,9 @@
                     <Border CornerRadius="10"
                             Background="#2e96ff"
                             Width="150" Height="30">
-                                 
+
                         <Grid>
-                            <Rectangle StrokeThickness="1"/>
+                            <Rectangle StrokeThickness="1" />
                             <TextBox Margin="1"
                                      Text="{TemplateBinding Text}"
                                      BorderThickness="0"
@@ -18,15 +18,15 @@
                                      VerticalAlignment="Center"
                                      Padding="5"
                                      Foreground="#99cbff"
-                                     x:Name="Loginek"/>
+                                     x:Name="Loginek" />
                         </Grid>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    
-    
+
+
     <Style TargetType="{x:Type TextBox}"
            x:Key="MoodernTextBox">
         <Setter Property="Template">
@@ -36,9 +36,9 @@
                             Background="#353340"
                             Width="200"
                             Height="40">
-                        
+
                         <Grid>
-                            <Rectangle StrokeThickness="1"/>
+                            <Rectangle StrokeThickness="1" />
                             <TextBox Margin="1"
                                      Background="Transparent"
                                      Text="{TemplateBinding Text}"
@@ -46,8 +46,8 @@
                                      Padding="5"
                                      Foreground="#CFCFCF"
                                      BorderThickness="0"
-                                     x:Name="SearchBox"/>
-                            
+                                     x:Name="SearchBox" />
+
                             <TextBlock IsHitTestVisible="False"
                                        Text="Search"
                                        VerticalAlignment="Center"
@@ -56,15 +56,15 @@
                                        FontSize="11"
                                        Foreground="DarkGray"
                                        Grid.Column="1">
-                                
+
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Style.Triggers>
                                             <DataTrigger Binding="{Binding Text, ElementName= SearchBox}" Value="">
-                                                <Setter Property="Visibility" Value="Visible"/>
+                                                <Setter Property="Visibility" Value="Visible" />
                                             </DataTrigger>
                                         </Style.Triggers>
-                                        <Setter Property="Visibility" Value="Hidden"/>
+                                        <Setter Property="Visibility" Value="Hidden" />
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
@@ -72,10 +72,10 @@
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
-            
+
         </Setter>
     </Style>
-    
+
     <Style TargetType="{x:Type TextBox}"
            x:Key="MoodernTextBoxFull">
         <Setter Property="Template">
@@ -85,21 +85,21 @@
                             Background="#353340"
                             Width="200"
                             Height="40">
-                        
+
                         <Grid>
-                            <Rectangle StrokeThickness="1"/>
+                            <Rectangle StrokeThickness="1" />
                             <TextBox Margin="1"
                                      Background="Transparent"
                                      VerticalAlignment="Center"
                                      Padding="5"
                                      Foreground="#CFCFCF"
                                      BorderThickness="0"
-                                     x:Name="texcik"/>
+                                     x:Name="texcik" />
                         </Grid>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
-            
+
         </Setter>
     </Style>
 </ResourceDictionary>

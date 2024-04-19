@@ -28,7 +28,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
+
     <!-- User Interface Button Style -->
     <Style TargetType="Button" x:Key="UserButtonInterface">
         <Setter Property="Template">
@@ -38,25 +38,25 @@
                             Height="100"
                             Margin="0,0,0,10"
                             x:Name="border">
-                        <ContentPresenter/>
+                        <ContentPresenter />
                     </Border>
-                    
+
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="#3A6180"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="#3A6180"/>
+                            <Setter Property="Background" TargetName="border" Value="#3A6180" />
+                            <Setter Property="BorderBrush" TargetName="border" Value="#3A6180" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="#3A6180"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="#3A6180"/>
+                            <Setter Property="Background" TargetName="border" Value="#3A6180" />
+                            <Setter Property="BorderBrush" TargetName="border" Value="#3A6180" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Cursor" Value="Hand" />
     </Style>
-    
+
     <Style TargetType="Button" x:Key="TurnOffButton">
         <Setter Property="Template">
             <Setter.Value>
@@ -66,22 +66,22 @@
                             Background="Transparent"
                             BorderThickness="0"
                             x:Name="Border">
-                        <ContentPresenter/>
+                        <ContentPresenter />
                     </Border>
-                    
+
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" TargetName="Border" Value="Transparent"/>
-                            <Setter Property="BorderBrush" TargetName="Border" Value="Transparent"/>
+                            <Setter Property="Background" TargetName="Border" Value="Transparent" />
+                            <Setter Property="BorderBrush" TargetName="Border" Value="Transparent" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" TargetName="Border" Value="Transparent"/>
-                            <Setter Property="Background" TargetName="Border" Value="Transparent"/>
+                            <Setter Property="Background" TargetName="Border" Value="Transparent" />
+                            <Setter Property="Background" TargetName="Border" Value="Transparent" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Cursor" Value="Hand" />
     </Style>
 </ResourceDictionary>

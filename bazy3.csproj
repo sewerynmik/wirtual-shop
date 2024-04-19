@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -36,149 +36,180 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
-          <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net48\FontAwesome.Sharp.dll</HintPath>
+            <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net48\FontAwesome.Sharp.dll</HintPath>
         </Reference>
         <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
-          <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
+            <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
         </Reference>
         <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-          <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+            <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
         </Reference>
-        <Reference Include="mscorlib" />
+        <Reference Include="mscorlib"/>
         <Reference Include="Oracle.ManagedDataAccess, Version=4.122.23.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-          <HintPath>..\packages\Oracle.ManagedDataAccess.23.3.2-dev\lib\net472\Oracle.ManagedDataAccess.dll</HintPath>
+            <HintPath>..\packages\Oracle.ManagedDataAccess.23.3.2-dev\lib\net472\Oracle.ManagedDataAccess.dll</HintPath>
         </Reference>
-        <Reference Include="System" />
+        <Reference Include="System"/>
         <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-          <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+            <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
         </Reference>
-        <Reference Include="System.ComponentModel.DataAnnotations" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Data" />
+        <Reference Include="System.ComponentModel.DataAnnotations"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Data"/>
         <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-          <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+            <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
         </Reference>
         <Reference Include="System.Formats.Asn1, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-          <HintPath>..\packages\System.Formats.Asn1.8.0.0\lib\net462\System.Formats.Asn1.dll</HintPath>
+            <HintPath>..\packages\System.Formats.Asn1.8.0.0\lib\net462\System.Formats.Asn1.dll</HintPath>
         </Reference>
         <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-          <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+            <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
         </Reference>
-        <Reference Include="System.Numerics" />
+        <Reference Include="System.Numerics"/>
         <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-          <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+            <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
         </Reference>
         <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-          <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+            <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
         </Reference>
         <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-          <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+            <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
         </Reference>
         <Reference Include="System.Text.Json, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-          <HintPath>..\packages\System.Text.Json.8.0.1\lib\net462\System.Text.Json.dll</HintPath>
+            <HintPath>..\packages\System.Text.Json.8.0.1\lib\net462\System.Text.Json.dll</HintPath>
         </Reference>
         <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-          <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+            <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
         </Reference>
         <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-          <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+            <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
         </Reference>
-        <Reference Include="System.Windows.Forms" />
-        <Reference Include="System.Xml" />
+        <Reference Include="System.Windows.Forms"/>
+        <Reference Include="System.Xml"/>
         <Reference Include="System.Xaml">
             <RequiredTargetFramework>4.0</RequiredTargetFramework>
         </Reference>
-        <Reference Include="WindowsBase" />
-        <Reference Include="PresentationCore" />
-        <Reference Include="PresentationFramework" />
+        <Reference Include="WindowsBase"/>
+        <Reference Include="PresentationCore"/>
+        <Reference Include="PresentationFramework"/>
     </ItemGroup>
     <ItemGroup>
         <ApplicationDefinition Include="App.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
-        <Compile Include="Core\ObservableObject.cs" />
-        <Compile Include="Core\RelayCommand.cs" />
-        <Compile Include="MVVM\viewModel\CardViewModel.cs" />
-        <Compile Include="MVVM\viewModel\ChangePhViewModel.cs" />
-        <Compile Include="MVVM\viewModel\ChangingEmailViewModel.cs" />
-        <Compile Include="MVVM\viewModel\ChangingPassViewModel.cs" />
-        <Compile Include="MVVM\viewModel\ShopViewModel.cs" />
-        <Compile Include="MVVM\viewModel\HomeViewModel.cs">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <Compile Include="Core\ObservableObject.cs"/>
+        <Compile Include="Core\RelayCommand.cs"/>
+        <Compile Include="MainWindow.xaml.cs">
+            <DependentUpon>MainWindow.xaml</DependentUpon>
+            <SubType>Code</SubType>
         </Compile>
-        <Compile Include="MVVM\viewModel\MainViewModel.cs">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <Compile Include="MVVM\viewModel\AdminViewModel\HomeViewModel.cs" />
+        <Compile Include="MVVM\viewModel\AdminViewModel\AdminViewModel.cs" />
+        <Compile Include="MVVM\viewModel\AdminViewModel\OrdersViewModel.cs" />
+        <Compile Include="MVVM\viewModel\AdminViewModel\ProducersViewModel.cs" />
+        <Compile Include="MVVM\viewModel\AdminViewModel\ProductsViewModel.cs" />
+        <Compile Include="MVVM\viewModel\AdminViewModel\UsersViewModel.cs" />
+        <Compile Include="MVVM\viewModel\IMainViewModel.cs" />
+        <Compile Include="MVVM\viewModel\UserViewModel\CardViewModel.cs" />
+        <Compile Include="MVVM\viewModel\UserViewModel\ChangePhViewModel.cs" />
+        <Compile Include="MVVM\viewModel\UserViewModel\ChangingEmailViewModel.cs" />
+        <Compile Include="MVVM\viewModel\UserViewModel\ChangingPassViewModel.cs" />
+        <Compile Include="MVVM\viewModel\UserViewModel\HomeViewModel.cs">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Compile>
-        <Compile Include="MVVM\viewModel\OptionsViewModel.cs" />
-        <Compile Include="MVVM\viewModel\ProfileViewModel.cs" />
-        <Compile Include="MVVM\view\CardView.xaml.cs">
-          <DependentUpon>CardView.xaml</DependentUpon>
+        <Compile Include="MVVM\viewModel\UserViewModel\MainViewModel.cs">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Compile>
-        <Compile Include="MVVM\view\ChangingEmailView.xaml.cs">
-          <DependentUpon>ChangingEmailView.xaml</DependentUpon>
-        </Compile>
-        <Compile Include="MVVM\view\ChangingPassView.xaml.cs">
-          <DependentUpon>ChangingPassView.xaml</DependentUpon>
-        </Compile>
-        <Compile Include="MVVM\view\ChangingPHView.xaml.cs">
-          <DependentUpon>ChangingPHView.xaml</DependentUpon>
-        </Compile>
-        <Compile Include="MVVM\view\ShopView.xaml.cs">
-          <DependentUpon>ShopView.xaml</DependentUpon>
-        </Compile>
-        <Compile Include="MVVM\view\HomeView.xaml.cs">
+        <Compile Include="MVVM\viewModel\UserViewModel\OptionsViewModel.cs" />
+        <Compile Include="MVVM\viewModel\UserViewModel\ProfileViewModel.cs" />
+        <Compile Include="MVVM\viewModel\UserViewModel\ShopViewModel.cs" />
+        <Compile Include="MVVM\view\AdminView\HomeView.xaml.cs">
           <DependentUpon>HomeView.xaml</DependentUpon>
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Compile>
-        <Compile Include="MVVM\view\OptionsView.xaml.cs">
-          <DependentUpon>OptionsView.xaml</DependentUpon>
+        <Compile Include="MVVM\view\AdminView\OrdersView.xaml.cs">
+          <DependentUpon>OrdersView.xaml</DependentUpon>
         </Compile>
-        <Compile Include="MVVM\view\ProfileView.xaml.cs">
-          <DependentUpon>ProfileView.xaml</DependentUpon>
+        <Compile Include="MVVM\view\AdminView\ProducersView.xaml.cs">
+          <DependentUpon>ProducersView.xaml</DependentUpon>
         </Compile>
-        <Compile Include="MVVM\view\TestView.xaml.cs">
-          <DependentUpon>TestView.xaml</DependentUpon>
+        <Compile Include="MVVM\view\AdminView\ProductsView.xaml.cs">
+          <DependentUpon>ProductsView.xaml</DependentUpon>
         </Compile>
-        <Compile Include="User2.xaml.cs">
-          <DependentUpon>User2.xaml</DependentUpon>
+        <Compile Include="MVVM\view\AdminView\UsersView.xaml.cs">
+          <DependentUpon>UsersView.xaml</DependentUpon>
         </Compile>
-        <Compile Include="UserControls\PopupUserControl.xaml.cs">
-          <DependentUpon>PopupUserControl.xaml</DependentUpon>
+        <Compile Include="MVVM\view\UserView\CardView.xaml.cs">
+            <DependentUpon>CardView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\UserView\ChangingEmailView.xaml.cs">
+            <DependentUpon>ChangingEmailView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\UserView\ChangingPassView.xaml.cs">
+            <DependentUpon>ChangingPassView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\UserView\ChangingPHView.xaml.cs">
+            <DependentUpon>ChangingPHView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\UserView\HomeView.xaml.cs">
+            <DependentUpon>HomeView.xaml</DependentUpon>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Compile>
+        <Compile Include="MVVM\view\UserView\OptionsView.xaml.cs">
+            <DependentUpon>OptionsView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\UserView\ProfileView.xaml.cs">
+            <DependentUpon>ProfileView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\UserView\ShopView.xaml.cs">
+            <DependentUpon>ShopView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\UserView\TestView.xaml.cs">
+            <DependentUpon>TestView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Windows\Admin.xaml.cs">
+            <DependentUpon>Admin.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Windows\Producent.xaml.cs">
+            <DependentUpon>Producent.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Windows\User2.xaml.cs">
+            <DependentUpon>User2.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="App.xaml.cs">
+            <DependentUpon>App.xaml</DependentUpon>
+            <SubType>Code</SubType>
         </Compile>
         <Page Include="MainWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </Page>
-        <Compile Include="App.xaml.cs">
-            <DependentUpon>App.xaml</DependentUpon>
-            <SubType>Code</SubType>
-        </Compile>
-        <Compile Include="MainWindow.xaml.cs">
-            <DependentUpon>MainWindow.xaml</DependentUpon>
-            <SubType>Code</SubType>
-        </Compile>
-        <Page Include="MVVM\view\CardView.xaml" />
-        <Page Include="MVVM\view\ChangingEmailView.xaml" />
-        <Page Include="MVVM\view\ChangingPassView.xaml" />
-        <Page Include="MVVM\view\ChangingPHView.xaml">
-          <DependentUpon>OptionsView.xaml</DependentUpon>
+        <Page Include="MVVM\view\AdminView\HomeView.xaml" />
+        <Page Include="MVVM\view\AdminView\OrdersView.xaml" />
+        <Page Include="MVVM\view\AdminView\ProducersView.xaml" />
+        <Page Include="MVVM\view\AdminView\ProductsView.xaml" />
+        <Page Include="MVVM\view\AdminView\UsersView.xaml" />
+        <Page Include="MVVM\view\UserView\CardView.xaml" />
+        <Page Include="MVVM\view\UserView\ChangingEmailView.xaml" />
+        <Page Include="MVVM\view\UserView\ChangingPassView.xaml" />
+        <Page Include="MVVM\view\UserView\ChangingPHView.xaml">
+            <DependentUpon>OptionsView.xaml</DependentUpon>
         </Page>
-        <Page Include="MVVM\view\ShopView.xaml" />
-        <Page Include="MVVM\view\HomeView.xaml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <Page Include="MVVM\view\UserView\HomeView.xaml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Page>
-        <Page Include="MVVM\view\OptionsView.xaml" />
-        <Page Include="MVVM\view\ProfileView.xaml" />
-        <Page Include="MVVM\view\TestView.xaml" />
+        <Page Include="MVVM\view\UserView\OptionsView.xaml" />
+        <Page Include="MVVM\view\UserView\ProfileView.xaml" />
+        <Page Include="MVVM\view\UserView\ShopView.xaml" />
+        <Page Include="MVVM\view\UserView\TestView.xaml" />
         <Page Include="themes\ButtonTheme.xaml" />
         <Page Include="themes\Cards.xaml" />
         <Page Include="themes\PasswordBoxTheme.xaml" />
         <Page Include="themes\TextBlockTheme.xaml" />
         <Page Include="themes\TextBoxTheme.xaml" />
         <Page Include="themes\UserButtonTheme.xaml" />
-        <Page Include="User2.xaml" />
-        <Page Include="UserControls\PopupUserControl.xaml" />
+        <Page Include="Windows\Admin.xaml" />
+        <Page Include="Windows\Producent.xaml" />
+        <Page Include="Windows\User2.xaml" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs">
@@ -199,28 +230,29 @@
         <None Include="packages.config" />
     </ItemGroup>
     <ItemGroup>
-      <Resource Include="images\icons8-gear-100.png" />
-      <Resource Include="images\icons8-home-64.png" />
-      <Resource Include="images\icons8-test-account-96.png" />
-      <Resource Include="images\icons8-exit-50.png" />
-      <Resource Include="images\anchovy.png" />
-      <Resource Include="images\clown-fish.png" />
-      <Resource Include="images\fish (1).png" />
-      <Resource Include="images\fish (2).png" />
-      <Resource Include="images\fish.png" />
-      <Resource Include="images\fishing (1).png" />
-      <Resource Include="images\fishing.png" />
-      <Resource Include="images\man.png" />
-      <Resource Include="images\seafood.png" />
-      <Resource Include="images\tuna.png" />
-      <Content Include="images\picture.png" />
-      <Content Include="Oracle.DataAccess.Common.Configuration.Section.xsd" />
-      <Content Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd" />
+        <Resource Include="images\icons8-gear-100.png" />
+        <Resource Include="images\icons8-home-64.png" />
+        <Resource Include="images\icons8-test-account-96.png" />
+        <Resource Include="images\icons8-exit-50.png" />
+        <Resource Include="images\anchovy.png" />
+        <Resource Include="images\clown-fish.png" />
+        <Resource Include="images\fish (1).png" />
+        <Resource Include="images\fish (2).png" />
+        <Resource Include="images\fish.png" />
+        <Resource Include="images\fishing (1).png" />
+        <Resource Include="images\fishing.png" />
+        <Resource Include="images\man.png" />
+        <Resource Include="images\seafood.png" />
+        <Resource Include="images\tuna.png" />
+        <Content Include="images\picture.png" />
+        <Content Include="Oracle.DataAccess.Common.Configuration.Section.xsd" />
+        <Content Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Data\" />
-      <Folder Include="Fonts\" />
-      <Folder Include="MVVM\model\" />
+        <Folder Include="Fonts\" />
+        <Folder Include="MVVM\model\" />
+        <Folder Include="MVVM\viewModel\ProducentViewModel\" />
+        <Folder Include="MVVM\view\ProducentView\" />
     </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
 </Project>

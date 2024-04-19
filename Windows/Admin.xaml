@@ -1,0 +1,116 @@
+﻿<Window x:Class="bazy3.Admin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:viewModel="clr-namespace:bazy3.MVVM.viewModel.AdminViewModel"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        Title="User2" Height="600" Width="920"
+        WindowStyle="None" ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        Topmost="True"
+        MouseDown="Admin_OnMouseDown">
+
+    <Window.DataContext>
+        <viewModel:AdminViewModel />
+    </Window.DataContext>
+
+    <Border Background="#272537"
+            CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+
+            <TextBlock Text="FishAdmin"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Foreground="White"
+                       FontSize="20"
+                       Margin="20,0,0,0" />
+
+            <StackPanel Grid.Row="1" Grid.Column="0">
+
+                <RadioButton Style="{StaticResource UserMenuButton}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"
+                             Tag="red">
+
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="Home" Style="{StaticResource MenuButtonIcon}" />
+                        <TextBlock Text="Home" Style="{StaticResource MenuButtonText}" />
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource UserMenuButton}"
+                             Command="{Binding ProductsViewCommand}"
+                             Tag="blue">
+
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="ShoppingCart" Style="{StaticResource MenuButtonIcon}" />
+                        <TextBlock Text="Products" Style="{StaticResource MenuButtonText}" />
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource UserMenuButton}"
+                             Command="{Binding OrdersViewCommand}"
+                             Tag="yellow">
+
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="Gear" Style="{StaticResource MenuButtonIcon}" />
+                        <TextBlock Text="Orders" Style="{StaticResource MenuButtonText}" />
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource UserMenuButton}"
+                             Command="{Binding UsersViewCommand}"
+                             Tag="orange">
+
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="User" Style="{StaticResource MenuButtonIcon}" />
+                        <TextBlock Text="Users" Style="{StaticResource MenuButtonText}" />
+                    </StackPanel>
+                </RadioButton>
+    
+                <RadioButton Style="{StaticResource UserMenuButton}"
+                             Command="{Binding ProducersViewCommand}"
+                             Tag="Pink">
+
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="User" Style="{StaticResource MenuButtonIcon}" />
+                        <TextBlock Text="Producers" Style="{StaticResource MenuButtonText}" />
+                    </StackPanel>
+                </RadioButton>
+
+            </StackPanel>
+
+            <Button Grid.Row="0" Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    Style="{StaticResource TurnOffButton}"
+                    Margin="0,0,60,0"
+                    Content="-"
+                    Foreground="Wheat"
+                    FontSize="50"
+                    Click="minimalise" />
+
+            <Button Grid.Row="0" Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    Click="Quit"
+                    Style="{StaticResource TurnOffButton}"
+                    Margin="0,0,10,0">
+                <Image Source="../images/icons8-exit-50.png" />
+            </Button>
+
+            <ContentControl Grid.Row="1" Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}" />
+
+        </Grid>
+    </Border>
+</Window>
