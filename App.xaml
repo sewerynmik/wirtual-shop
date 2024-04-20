@@ -2,9 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:viewModel="clr-namespace:bazy3.MVVM.viewModel"
-             xmlns:AdminViewModel="clr-namespace:bazy3.MVVM.viewModel.AdminViewModel"
+             xmlns:adminViewModel="clr-namespace:bazy3.MVVM.viewModel.AdminViewModel"
+             xmlns:producerViewModel="clr-namespace:bazy3.MVVM.viewModel.ProducentViewModel"
              xmlns:view="clr-namespace:bazy3.MVVM.view"
-             xmlns:AdminView="clr-namespace:bazy3.MVVM.view.AdminView"
+             xmlns:adminView="clr-namespace:bazy3.MVVM.view.AdminView"
+             xmlns:producerView="clr-namespace:bazy3.MVVM.view.ProducentView"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -48,25 +50,37 @@
             <DataTemplate DataType="{x:Type viewModel:CardViewModel}">
                 <view:CardView />
             </DataTemplate>
-            
-            <DataTemplate DataType="{x:Type AdminViewModel:HomeViewModel}">
-                <AdminView:HomeView />
+
+            <DataTemplate DataType="{x:Type adminViewModel:HomeViewModel}">
+                <adminView:HomeView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type adminViewModel:OrdersViewModel}">
+                <adminView:OrdersView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type adminViewModel:ProducersViewModel}">
+                <adminView:ProducersView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type adminViewModel:ProductsViewModel}">
+                <adminView:ProductsView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type adminViewModel:UsersViewModel}">
+                <adminView:UsersView />
             </DataTemplate>
             
-            <DataTemplate DataType="{x:Type AdminViewModel:OrdersViewModel}">
-                <AdminView:OrdersView />
+            <DataTemplate DataType="{x:Type producerViewModel:HomeViewModel}">
+                <producerView:HomeView/>
             </DataTemplate>
             
-            <DataTemplate DataType="{x:Type AdminViewModel:ProducersViewModel}">
-                <AdminView:ProducersView />
+            <DataTemplate DataType="{x:Type producerView:ProfileView}">
+                <producerView:ProfileView/>
             </DataTemplate>
             
-            <DataTemplate DataType="{x:Type AdminViewModel:ProductsViewModel}">
-                <AdminView:ProductsView />
-            </DataTemplate>
-            
-            <DataTemplate DataType="{x:Type AdminViewModel:UsersViewModel}">
-                <AdminView:UsersView />
+            <DataTemplate DataType="{x:Type producerViewModel:MyProductsViewModel}">
+                <producerView:MyProductsView/>
             </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>

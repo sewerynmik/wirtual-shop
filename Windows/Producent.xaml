@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:viewModel="clr-namespace:bazy3.MVVM.viewModel"
+        xmlns:viewModel="clr-namespace:bazy3.MVVM.viewModel.ProducentViewModel"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
         Title="User2" Height="600" Width="920"
@@ -15,7 +15,7 @@
         MouseDown="Producent_OnMouseDown">
 
     <Window.DataContext>
-        <viewModel:MainViewModel />
+        <viewModel:ProducentViewModel />
     </Window.DataContext>
 
     <Border Background="#272537"
@@ -51,42 +51,24 @@
                     </StackPanel>
                 </RadioButton>
                 <RadioButton Style="{StaticResource UserMenuButton}"
-                             Command="{Binding DiscoveryViewCommand}"
+                             Command="{Binding MyProductsViewCommand}"
                              Tag="blue">
 
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="ShoppingCart" Style="{StaticResource MenuButtonIcon}" />
-                        <TextBlock Text="Products" Style="{StaticResource MenuButtonText}" />
+                        <TextBlock Text="MyProducts" Style="{StaticResource MenuButtonText}" />
                     </StackPanel>
                 </RadioButton>
                 <RadioButton Style="{StaticResource UserMenuButton}"
-                             Command="{Binding OptionsViewCommand}"
+                             Command="{Binding ProfileViewCommand}"
                              Tag="yellow">
 
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="Gear" Style="{StaticResource MenuButtonIcon}" />
-                        <TextBlock Text="Orders" Style="{StaticResource MenuButtonText}" />
+                        <TextBlock Text="Profile" Style="{StaticResource MenuButtonText}" />
                     </StackPanel>
                 </RadioButton>
-                <RadioButton Style="{StaticResource UserMenuButton}"
-                             Command="{Binding ProfileViewCommand}"
-                             Tag="orange">
-
-                    <StackPanel Orientation="Horizontal">
-                        <fa:ImageAwesome Icon="User" Style="{StaticResource MenuButtonIcon}" />
-                        <TextBlock Text="Users" Style="{StaticResource MenuButtonText}" />
-                    </StackPanel>
-                </RadioButton>
-    
-                <RadioButton Style="{StaticResource UserMenuButton}"
-                             Command="{Binding ProfileViewCommand}"
-                             Tag="Pink">
-
-                    <StackPanel Orientation="Horizontal">
-                        <fa:ImageAwesome Icon="User" Style="{StaticResource MenuButtonIcon}" />
-                        <TextBlock Text="Producers" Style="{StaticResource MenuButtonText}" />
-                    </StackPanel>
-                </RadioButton>
+                
             </StackPanel>
 
 

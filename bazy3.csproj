@@ -99,17 +99,27 @@
         </ApplicationDefinition>
         <Compile Include="Core\ObservableObject.cs"/>
         <Compile Include="Core\RelayCommand.cs"/>
+        <Compile Include="Entities\CardData.cs"/>
+        <Compile Include="Entities\Klienci.cs"/>
+        <Compile Include="Entities\Login.cs"/>
+        <Compile Include="Entities\Producenci.cs" />
+        <Compile Include="Entities\Przedmioty.cs"/>
+        <Compile Include="Entities\Zamowienia.cs"/>
         <Compile Include="MainWindow.xaml.cs">
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Include="MVVM\viewModel\AdminViewModel\HomeViewModel.cs" />
-        <Compile Include="MVVM\viewModel\AdminViewModel\AdminViewModel.cs" />
-        <Compile Include="MVVM\viewModel\AdminViewModel\OrdersViewModel.cs" />
-        <Compile Include="MVVM\viewModel\AdminViewModel\ProducersViewModel.cs" />
-        <Compile Include="MVVM\viewModel\AdminViewModel\ProductsViewModel.cs" />
-        <Compile Include="MVVM\viewModel\AdminViewModel\UsersViewModel.cs" />
-        <Compile Include="MVVM\viewModel\IMainViewModel.cs" />
+        <Compile Include="MVVM\viewModel\AdminViewModel\HomeViewModel.cs"/>
+        <Compile Include="MVVM\viewModel\AdminViewModel\AdminViewModel.cs"/>
+        <Compile Include="MVVM\viewModel\AdminViewModel\OrdersViewModel.cs"/>
+        <Compile Include="MVVM\viewModel\AdminViewModel\ProducersViewModel.cs"/>
+        <Compile Include="MVVM\viewModel\AdminViewModel\ProductsViewModel.cs"/>
+        <Compile Include="MVVM\viewModel\AdminViewModel\UsersViewModel.cs"/>
+        <Compile Include="MVVM\viewModel\IMainViewModel.cs"/>
+        <Compile Include="MVVM\viewModel\ProducentViewModel\HomeViewModel.cs" />
+        <Compile Include="MVVM\viewModel\ProducentViewModel\MyProductsViewModel.cs" />
+        <Compile Include="MVVM\viewModel\ProducentViewModel\ProducentViewModel.cs" />
+        <Compile Include="MVVM\viewModel\ProducentViewModel\ProfileViewModel.cs" />
         <Compile Include="MVVM\viewModel\UserViewModel\CardViewModel.cs" />
         <Compile Include="MVVM\viewModel\UserViewModel\ChangePhViewModel.cs" />
         <Compile Include="MVVM\viewModel\UserViewModel\ChangingEmailViewModel.cs" />
@@ -124,19 +134,28 @@
         <Compile Include="MVVM\viewModel\UserViewModel\ProfileViewModel.cs" />
         <Compile Include="MVVM\viewModel\UserViewModel\ShopViewModel.cs" />
         <Compile Include="MVVM\view\AdminView\HomeView.xaml.cs">
-          <DependentUpon>HomeView.xaml</DependentUpon>
+            <DependentUpon>HomeView.xaml</DependentUpon>
         </Compile>
         <Compile Include="MVVM\view\AdminView\OrdersView.xaml.cs">
-          <DependentUpon>OrdersView.xaml</DependentUpon>
+            <DependentUpon>OrdersView.xaml</DependentUpon>
         </Compile>
         <Compile Include="MVVM\view\AdminView\ProducersView.xaml.cs">
-          <DependentUpon>ProducersView.xaml</DependentUpon>
+            <DependentUpon>ProducersView.xaml</DependentUpon>
         </Compile>
         <Compile Include="MVVM\view\AdminView\ProductsView.xaml.cs">
-          <DependentUpon>ProductsView.xaml</DependentUpon>
+            <DependentUpon>ProductsView.xaml</DependentUpon>
         </Compile>
         <Compile Include="MVVM\view\AdminView\UsersView.xaml.cs">
-          <DependentUpon>UsersView.xaml</DependentUpon>
+            <DependentUpon>UsersView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\ProducentView\HomeView.xaml.cs">
+          <DependentUpon>HomeView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\ProducentView\MyProductsView.xaml.cs">
+          <DependentUpon>MyProductsView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\ProducentView\ProfileView.xaml.cs">
+          <DependentUpon>ProfileView.xaml</DependentUpon>
         </Compile>
         <Compile Include="MVVM\view\UserView\CardView.xaml.cs">
             <DependentUpon>CardView.xaml</DependentUpon>
@@ -188,6 +207,9 @@
         <Page Include="MVVM\view\AdminView\ProducersView.xaml" />
         <Page Include="MVVM\view\AdminView\ProductsView.xaml" />
         <Page Include="MVVM\view\AdminView\UsersView.xaml" />
+        <Page Include="MVVM\view\ProducentView\HomeView.xaml" />
+        <Page Include="MVVM\view\ProducentView\MyProductsView.xaml" />
+        <Page Include="MVVM\view\ProducentView\ProfileView.xaml" />
         <Page Include="MVVM\view\UserView\CardView.xaml" />
         <Page Include="MVVM\view\UserView\ChangingEmailView.xaml" />
         <Page Include="MVVM\view\UserView\ChangingPassView.xaml" />
@@ -251,8 +273,6 @@
     <ItemGroup>
         <Folder Include="Fonts\" />
         <Folder Include="MVVM\model\" />
-        <Folder Include="MVVM\viewModel\ProducentViewModel\" />
-        <Folder Include="MVVM\view\ProducentView\" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
 </Project>

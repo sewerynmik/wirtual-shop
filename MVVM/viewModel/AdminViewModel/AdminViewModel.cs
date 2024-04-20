@@ -1,10 +1,9 @@
 ﻿namespace bazy3.MVVM.viewModel.AdminViewModel;
 
-
 public class AdminViewModel : ObservableObject, IMainViewModel
 {
     private object _currentView;
-    
+
     public AdminViewModel()
     {
         App.MainVm = this;
@@ -16,14 +15,14 @@ public class AdminViewModel : ObservableObject, IMainViewModel
         UsersVM = new UsersViewModel();
 
         CurrentView = HomeVM;
-        
+
         HomeViewCommand = new RelayCommand(o => { CurrentView = HomeVM; });
         UsersViewCommand = new RelayCommand(o => { CurrentView = UsersVM; });
         ProducersViewCommand = new RelayCommand(o => { CurrentView = ProducersVM; });
         ProductsViewCommand = new RelayCommand(o => { CurrentView = ProductsVM; });
         OrdersViewCommand = new RelayCommand(o => { CurrentView = OrdersVM; });
     }
-    
+
     public RelayCommand HomeViewCommand { set; get; }
     public RelayCommand UsersViewCommand { set; get; }
     public RelayCommand ProductsViewCommand { set; get; }

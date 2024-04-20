@@ -1,7 +1,5 @@
-﻿namespace bazy3.MVVM.viewModel
+﻿namespace bazy3.MVVM.viewModel;
+
+public class HomeViewModel
 {
-    public class HomeViewModel
-    {
-        
-    }
 }

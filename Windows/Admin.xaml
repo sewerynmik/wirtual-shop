@@ -77,7 +77,7 @@
                         <TextBlock Text="Users" Style="{StaticResource MenuButtonText}" />
                     </StackPanel>
                 </RadioButton>
-    
+
                 <RadioButton Style="{StaticResource UserMenuButton}"
                              Command="{Binding ProducersViewCommand}"
                              Tag="Pink">

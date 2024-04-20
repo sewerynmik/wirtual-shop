@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using bazy3.Entities;
 using Oracle.ManagedDataAccess.Client;
 
 namespace bazy3.MVVM.view;
@@ -51,13 +52,4 @@ public partial class ShopView : UserControl
 
         App.ShopBag.Add(id);
     }
-}
-
-public class CardData
-{
-    public int Id { get; set; }
-    public string Nazwa { get; set; }
-    public string Producent { get; set; }
-    public decimal Cena { get; set; }
-    public int Ilosc { get; set; }
 }
