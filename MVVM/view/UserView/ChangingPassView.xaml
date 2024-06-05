@@ -43,7 +43,7 @@
                      x:Name="Newpass2" />
 
         <TextBlock Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="1"
-                   Text="" Opacity="0"
+                   Style="{StaticResource ErrorTextBlock2}"
                    x:Name="Mess" />
 
         <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5"

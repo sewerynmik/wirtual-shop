@@ -15,7 +15,7 @@ public partial class ChangingPassView : UserControl
 
     private void Change(object sender, RoutedEventArgs e)
     {
-        var sql = $"SELECT \"haslo\" FROM LOGIN WHERE \"klient_id\" = '{App.UserId}'";
+        var sql = $"SELECT \"haslo\" FROM \"login\" WHERE \"klient_id\" = '{App.UserId}'";
         try
         {
             using (var command = new OracleCommand(sql, App.Con))
@@ -24,9 +24,9 @@ public partial class ChangingPassView : UserControl
                 {
                     reader.Read();
 
-                    var passbox = (PasswordBox)Oldpass.Template.FindName("haselko", Oldpass);
-                    var newpass = (PasswordBox)Newpass.Template.FindName("haselko", Newpass);
-                    var newpass2 = (PasswordBox)Newpass2.Template.FindName("haselko", Newpass2);
+                    var passbox = (PasswordBox)Oldpass.Template.FindName("input", Oldpass);
+                    var newpass = (PasswordBox)Newpass.Template.FindName("input", Newpass);
+                    var newpass2 = (PasswordBox)Newpass2.Template.FindName("input", Newpass2);
 
                     if (reader.GetString(0) != passbox.Password)
                     {
@@ -49,7 +49,7 @@ public partial class ChangingPassView : UserControl
                         return;
                     }
 
-                    sql = $"UPDATE LOGIN SET \"haslo\" = '{newpass.Password}' WHERE \"klient_id\" = '{App.UserId}'";
+                    sql = $"UPDATE \"login\" SET \"haslo\" = '{newpass.Password}' WHERE \"klient_id\" = '{App.UserId}'";
                     using (var updateCommand = new OracleCommand(sql, App.Con))
                     {
                         updateCommand.ExecuteNonQuery();
