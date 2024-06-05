@@ -4,21 +4,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:fa="http://schemas.fontawesome.io/icons/"
-             mc:Ignorable="d">
-    <Grid IsEnabled="True">
+             mc:Ignorable="d"
+             d:DesignHeight="460"
+             d:DesignWidth="800"
+             Background="Transparent">
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="40" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Button Grid.Row="0"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Margin="5"
-                Width="100"
-                Click="Buy">
-            <fa:ImageAwesome Icon="ShoppingBag" />
-        </Button>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock Style="{StaticResource CName}" Text="Dokonaj zakupu klikając w przycisk po prawej"/>
+            <Button Style="{StaticResource ModernButton}"
+                    Margin="20 0 0 0"
+                    Content="Dokonaj zakupu" Click="Buy"></Button>
+        </StackPanel>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled">
             <ItemsControl x:Name="CardItemsControl" Margin="5">
@@ -36,32 +37,35 @@
                 </ItemsControl.ItemContainerStyle>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border Style="{StaticResource karta}" Margin="0 0 5 5">
+                        <Border Style="{StaticResource Card}" Margin="0 0 5 5">
                             <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="110" />
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-
                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
                                     <ColumnDefinition />
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
 
-                                <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Vertical">
+                                <StackPanel Grid.Column="0" Orientation="Vertical">
                                     <TextBlock Style="{StaticResource CName}" Text="{Binding Nazwa}" />
-                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding Producent}" />
-                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding Cena}" />
-                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding Ilosc}" />
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource CRest}" Text="Cena: "/>
+                                        <TextBlock Style="{StaticResource CRest}" Text="{Binding Cena.X}" />
+                                        <TextBlock Style="{StaticResource CRest}" Text="{Binding Cena.Y}" />
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource CRest}" Text="Producent: " />
+                                        <TextBlock Style="{StaticResource CRest}" Text="{Binding Producent}" />
+                                    </StackPanel>
                                 </StackPanel>
+                                
+                                <StackPanel Grid.Column="1">
+                                    <Image Stretch="Uniform" MaxHeight="100" Source="{Binding Kategoria2}"/>
+                                </StackPanel>
+                                
 
-                                <Button Grid.Column="1" Grid.Row="1"
-                                        Background="Transparent"
-                                        BorderBrush="Transparent"
-                                        Height="30"
-                                        VerticalAlignment="Bottom"
-                                        Margin="0 0 0 5"
-                                        Click="usun"
+                                <Button Grid.Column="2"
+                                        Click="Usun"
+                                        Style="{StaticResource CardShopButton}"
                                         CommandParameter="{Binding Id}">
                                     <fa:ImageAwesome Icon="close" />
                                 </Button>

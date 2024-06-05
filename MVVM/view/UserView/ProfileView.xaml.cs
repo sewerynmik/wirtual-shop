@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Controls;
 using bazy3.Entities;
 using Oracle.ManagedDataAccess.Client;
@@ -15,11 +16,11 @@ public partial class ProfileView : UserControl
         OrderCollection.ItemsSource = OrderList;
     }
 
-    public ObservableCollection<Zam_prze> OrderList { get; } = new();
+    public ObservableCollection<Zamowienia> OrderList { get; } = new();
 
     public void LoadDataFromDatabase()
     {
-        string sql = $"SELECT * FROM ZAM WHERE \"klient_id\" =" + App.UserId;
+        string sql = $"SELECT \"zamowienie_id\", \"nr_zamowienia\", \"data\"  FROM \"zamowienia\" WHERE \"klient_id\" =" + App.UserId;
 
         try
         {
@@ -28,10 +29,11 @@ public partial class ProfileView : UserControl
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
-                        OrderList.Add(new Zam_prze()
+                        OrderList.Add(new Zamowienia()
                         {
-                            IdZam = reader.GetInt32(0),
-                            IdPrze = reader.GetInt32(1)
+                            ZamowienieId = reader.GetInt32(0),
+                            NrZamowienia = reader.GetInt64(1),
+                            Data = reader.GetDateTime(2)
                         });
                 }
             }
@@ -41,5 +43,12 @@ public partial class ProfileView : UserControl
             Console.WriteLine(e);
             throw;
         }
+    }
+
+    private void SeeOrder(object sender, RoutedEventArgs e)
+    {
+        var id = (int)((Button)sender).CommandParameter;
+        
+        
     }
 }

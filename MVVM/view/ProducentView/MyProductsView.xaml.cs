@@ -18,7 +18,7 @@ public partial class MyProductsView : UserControl
         ItemsControl.ItemsSource = CardList;
     }
 
-    public ObservableCollection<CardData> CardList { get; } = new();
+    public ObservableCollection<PrzePro> CardList { get; } = new();
 
     private void LoadDataFromDatabase()
     {
@@ -30,13 +30,12 @@ public partial class MyProductsView : UserControl
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
-                        CardList.Add(new CardData
+                        CardList.Add(new PrzePro
                         {
                             Id = reader.GetInt32(0),
                             Nazwa = reader.GetString(1),
                             Producent = reader.GetString(2),
-                            Cena = reader.GetDecimal(3),
-                            Ilosc = reader.GetInt32(4)
+                            // Cena = reader.GetDecimal(3),
                         });
                 }
             }

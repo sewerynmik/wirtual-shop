@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
 using bazy3.Entities;
@@ -16,11 +17,11 @@ public partial class ShopView : UserControl
         ItemsControl.ItemsSource = CardList;
     }
 
-    public ObservableCollection<CardData> CardList { get; } = new();
+    public ObservableCollection<PrzePro> CardList { get; } = new();
 
     private void LoadDataFromDatabase()
     {
-        var sql = "SELECT * FROM \"karty\"";
+        var sql = $"SELECT * FROM \"prze_pro\"";
 
         try
         {
@@ -29,14 +30,25 @@ public partial class ShopView : UserControl
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
-                        CardList.Add(new CardData
+                    {
+                        
+                        var cenaString = reader.GetString(3);
+                        
+                        var cena = JsonSerializer.Deserialize<Cena>(cenaString);
+                        
+                        var kategoria = reader.GetString(4);
+                        var kategoria2 = $"../../../images/{kategoria}.png";
+
+                        CardList.Add(new PrzePro()
                         {
                             Id = reader.GetInt32(0),
                             Nazwa = reader.GetString(1),
                             Producent = reader.GetString(2),
-                            Cena = reader.GetDecimal(3),
-                            Ilosc = reader.GetInt32(4)
+                            Cena = cena,
+                            Kategoria = kategoria,
+                            Kategoria2 = kategoria2
                         });
+                    }
                 }
             }
         }
@@ -46,10 +58,11 @@ public partial class ShopView : UserControl
         }
     }
 
-    private void Button_Click(object sender, RoutedEventArgs e)
+
+    private void AddItem(object sender, RoutedEventArgs e)
     {
         var id = (int)((Button)sender).CommandParameter;
 
-        App.ShopBag.Add(id);
+        
     }
 }

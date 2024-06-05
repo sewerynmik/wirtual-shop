@@ -5,16 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:fa="http://schemas.fontawesome.io/icons/"
              mc:Ignorable="d"
+             
+             d:DesignHeight="460"
+             d:DesignWidth="800"
              Background="Transparent">
     
-    <Grid IsEnabled="True"
-          ShowGridLines="True">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         
-        <TextBlock Text="Zamowienia"
+        <TextBlock Text="Moje zamówienia"
                    Style="{StaticResource  ModernTextBlock}"
                    Grid.Row="0"/>
         
@@ -44,13 +46,33 @@
                 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border Style="{StaticResource karta}" Margin="0 0 5 5">
+                        <Border Style="{StaticResource Card}" Margin="0 0 5 5">
                             <Grid>
-                                <StackPanel Orientation="Vertical">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                
+                                <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource CRest}" Text="Numer zamówienia: "/>
                                     <TextBlock Style="{StaticResource CRest}" Text="{Binding NrZamowienia}" />
-                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding Data}" />
-                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding nazwa}" />
                                 </StackPanel>
+                                <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource CRest}" Text="Data złożenia zamówienia: "/>
+                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding Data}" />
+                                </StackPanel>
+                                
+                                <Button Grid.RowSpan="2" Grid.Row="0" Grid.Column="1"
+                                        Style="{StaticResource CardButton}"
+                                        CommandParameter="{Binding ZamowienieId}"
+                                        Content="Zobacz"
+                                        Click="SeeOrder"/>
                             </Grid>
                         </Border>
                     </DataTemplate>

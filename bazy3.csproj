@@ -99,7 +99,7 @@
         </ApplicationDefinition>
         <Compile Include="Core\ObservableObject.cs"/>
         <Compile Include="Core\RelayCommand.cs"/>
-        <Compile Include="Entities\CardData.cs"/>
+        <Compile Include="Entities\PrzePro.cs" />
         <Compile Include="Entities\DataTypes\Adres.cs" />
         <Compile Include="Entities\DataTypes\Cena.cs" />
         <Compile Include="Entities\Klienci.cs" />
@@ -278,6 +278,8 @@
         <Resource Include="images\man.png" />
         <Resource Include="images\seafood.png" />
         <Resource Include="images\tuna.png" />
+        <Resource Include="images\wędka.png" />
+        <Resource Include="images\spławik.png" />
         <Content Include="images\picture.png" />
         <Content Include="Oracle.DataAccess.Common.Configuration.Section.xsd" />
         <Content Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd" />

@@ -7,6 +7,7 @@
              xmlns:view="clr-namespace:bazy3.MVVM.view"
              xmlns:adminView="clr-namespace:bazy3.MVVM.view.AdminView"
              xmlns:producerView="clr-namespace:bazy3.MVVM.view.ProducentView"
+             xmlns:bazy3="clr-namespace:bazy3"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
