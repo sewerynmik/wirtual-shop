@@ -39,6 +39,11 @@
                                     <TextBlock Style="{StaticResource CRest}" Text="{Binding Cena}" />
                                     <TextBlock Style="{StaticResource CRest}" Text="{Binding Ilosc}" />
                                 </StackPanel>
+                                
+                                <Button Grid.Column="1" Grid.Row="1"
+                                        Click="Del"
+                                        CommandParameter="{Binding Id}">
+                                </Button>
                             </Grid>
                         </Border>
                     </DataTemplate>

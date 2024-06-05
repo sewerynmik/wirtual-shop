@@ -18,7 +18,7 @@
                                      VerticalAlignment="Center"
                                      Padding="5"
                                      Foreground="#99cbff"
-                                     x:Name="Loginek" />
+                                     x:Name="input" />
                         </Grid>
                     </Border>
                 </ControlTemplate>
@@ -28,7 +28,7 @@
 
 
     <Style TargetType="{x:Type TextBox}"
-           x:Key="MoodernTextBox">
+           x:Key="ModernTextBox">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -77,7 +77,7 @@
     </Style>
 
     <Style TargetType="{x:Type TextBox}"
-           x:Key="MoodernTextBoxFull">
+           x:Key="ModernTextBoxFull">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -94,7 +94,7 @@
                                      Padding="5"
                                      Foreground="#CFCFCF"
                                      BorderThickness="0"
-                                     x:Name="texcik" />
+                                     x:Name="input" />
                         </Grid>
                     </Border>
                 </ControlTemplate>

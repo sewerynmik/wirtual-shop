@@ -75,12 +75,16 @@
                 <producerView:HomeView/>
             </DataTemplate>
             
-            <DataTemplate DataType="{x:Type producerView:ProfileView}">
+            <DataTemplate DataType="{x:Type producerViewModel:ProfileViewModel}">
                 <producerView:ProfileView/>
             </DataTemplate>
             
             <DataTemplate DataType="{x:Type producerViewModel:MyProductsViewModel}">
                 <producerView:MyProductsView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type producerViewModel:AddProductViewModel}">
+                <producerView:AddProductView/>
             </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>

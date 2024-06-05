@@ -74,6 +74,42 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    <Style BasedOn="{StaticResource {x:Type Button}}"
+           TargetType="{x:Type Button}"
+           x:Key="ModernButton2">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="10"
+                            Width="{TemplateBinding Width}"
+                            Height="40"
+                            Background="#353340"
+                            x:Name="ButtonBorder">
+
+                        <Grid>
+                            <Rectangle StrokeThickness="1" />
+
+                            <TextBlock IsHitTestVisible="False"
+                                       Text="{TemplateBinding Content}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       FontSize="11"
+                                       Foreground="DarkGray" />
+                        </Grid>
+
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand" />
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="#555555" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
     <Style x:Key="MenuButtonIcon" TargetType="fa:ImageAwesome">
         <Setter Property="Foreground"

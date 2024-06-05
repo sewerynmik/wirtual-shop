@@ -10,16 +10,16 @@ public class ProducentViewModel : ObservableObject, IMainViewModel
         App.MainVm = this;
 
         HomeVm = new HomeViewModel();
-        ProfieVM = new ProfileViewModel();
-        MyProductsVM = new MyProductsViewModel();
+        ProfileVm = new ProfileViewModel();
+        MyProductsVm = new MyProductsViewModel();
 
         CurrentView = HomeVm;
 
         HomeViewCommand = new RelayCommand(o => { CurrentView = HomeVm; });
 
-        ProfileViewCommand = new RelayCommand(o => { CurrentView = ProfieVM; });
+        ProfileViewCommand = new RelayCommand(o => { CurrentView = ProfileVm; });
 
-        MyProductsViewCommand = new RelayCommand(o => { CurrentView = MyProductsVM; });
+        MyProductsViewCommand = new RelayCommand(o => { CurrentView = MyProductsVm; });
     }
 
     public RelayCommand HomeViewCommand { get; set; }
@@ -30,9 +30,9 @@ public class ProducentViewModel : ObservableObject, IMainViewModel
 
     public HomeViewModel HomeVm { get; set; }
 
-    public ProfileViewModel ProfieVM { get; set; }
+    public ProfileViewModel ProfileVm { get; set; }
 
-    public MyProductsViewModel MyProductsVM { get; set; }
+    public MyProductsViewModel MyProductsVm { get; set; }
 
     public object CurrentView
     {

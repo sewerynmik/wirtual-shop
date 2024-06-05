@@ -4,3 +4,4 @@ public interface IMainViewModel
 {
     object CurrentView { get; set; }
 }
+

@@ -32,7 +32,6 @@ public partial class ProducersView : UserControl
                         {
                             ProducentId = reader.GetInt32(0),
                             Nazwa = reader.GetString(1),
-                            Opis = reader.GetString(2)
                         });
                 }
             }

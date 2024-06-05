@@ -34,7 +34,6 @@ public partial class OrdersView : UserControl
                             ZamowienieId = reader.GetInt32(0),
                             NrZamowienia = reader.GetInt64(1),
                             KlienitId = reader.GetInt32(2),
-                            PrzedmiotId = reader.GetInt32(3),
                             Data = reader.GetDateTime(4)
                         });
                 }

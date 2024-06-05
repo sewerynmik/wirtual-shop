@@ -27,7 +27,7 @@
                    Style="{StaticResource ModernTextBlock}" />
 
         <TextBox Grid.Column="1" Grid.Row="2"
-                 Style="{StaticResource MoodernTextBoxFull}"
+                 Style="{StaticResource ModernTextBoxFull}"
                  x:Name="newvalue" />
 
         <TextBlock Grid.Row="3" Grid.Column="1"

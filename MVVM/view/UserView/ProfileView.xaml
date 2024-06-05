@@ -3,8 +3,59 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
              mc:Ignorable="d"
-             d:DesignHeight="460" d:DesignWidth="800"
              Background="Transparent">
-    <Grid />
+    
+    <Grid IsEnabled="True"
+          ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <TextBlock Text="Zamowienia"
+                   Style="{StaticResource  ModernTextBlock}"
+                   Grid.Row="0"/>
+        
+        
+        <ScrollViewer Margin="25 10"
+                      VerticalScrollBarVisibility="Visible"
+                      HorizontalScrollBarVisibility="Disabled"
+                      
+                      Grid.Row="1">
+            <ItemsControl x:Name="OrderCollection"
+                          Margin="5"
+                          HorizontalContentAlignment="Stretch">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal"
+                                   ItemHeight="160"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                
+                <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="ContentPresenter">
+                        <Setter Property="HorizontalAlignment" Value="Stretch" />
+                        <Setter Property="Width"
+                                Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=WrapPanel}}" />
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+                
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource karta}" Margin="0 0 5 5">
+                            <Grid>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding NrZamowienia}" />
+                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding Data}" />
+                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding nazwa}" />
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
 </UserControl>

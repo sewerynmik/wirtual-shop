@@ -92,3 +92,7 @@ C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ProducentView\Pro
 C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ProducentView\HomeView.baml
 C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ProducentView\MyProductsView.baml
 C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ProducentView\ProfileView.baml
+C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ProducentView\AddProductView.g.cs
+C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ProducentView\AddProductView.baml
+C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\AdminView\okno.g.cs
+C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\AdminView\okno.baml

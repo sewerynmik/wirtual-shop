@@ -18,4 +18,13 @@
 
 
     </Style>
+    
+    <Style TargetType="{x:Type TextBlock}" x:Key="ErrorTextBlock">
+        <Setter Property="Foreground" Value="Red"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Opacity" Value="0"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="FontWeight" Value="Light"/>
+    </Style>
 </ResourceDictionary>

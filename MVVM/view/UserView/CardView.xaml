@@ -15,11 +15,12 @@
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
                 Margin="5"
-                Width="100">
+                Width="100"
+                Click="Buy">
             <fa:ImageAwesome Icon="ShoppingBag" />
         </Button>
 
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled">
             <ItemsControl x:Name="CardItemsControl" Margin="5">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
