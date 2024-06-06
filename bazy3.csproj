@@ -113,6 +113,8 @@
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Include="MVVM\viewModel\AdminViewModel\AddProductsViewModel.cs" />
+        <Compile Include="MVVM\viewModel\AdminViewModel\EditProductsViewModel.cs" />
         <Compile Include="MVVM\viewModel\AdminViewModel\HomeViewModel.cs" />
         <Compile Include="MVVM\viewModel\AdminViewModel\AdminViewModel.cs" />
         <Compile Include="MVVM\viewModel\AdminViewModel\OrdersViewModel.cs" />
@@ -139,6 +141,27 @@
         <Compile Include="MVVM\viewModel\UserViewModel\OrderViewModel.cs" />
         <Compile Include="MVVM\viewModel\UserViewModel\ProfileViewModel.cs" />
         <Compile Include="MVVM\viewModel\UserViewModel\ShopViewModel.cs" />
+        <Compile Include="MVVM\view\AdminView\AddProducersView.xaml.cs">
+          <DependentUpon>AddProducersView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\AdminView\AddProductsView.xaml.cs">
+          <DependentUpon>AddProductsView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\AdminView\AddUserView.xaml.cs">
+          <DependentUpon>AddUserView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\AdminView\EditLoginView.xaml.cs">
+          <DependentUpon>EditLoginView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\AdminView\EditProducersView.xaml.cs">
+          <DependentUpon>EditProducersView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\AdminView\EditProductsView.xaml.cs">
+          <DependentUpon>EditProductsView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\AdminView\EditUserView.xaml.cs">
+          <DependentUpon>EditUserView.xaml</DependentUpon>
+        </Compile>
         <Compile Include="MVVM\view\AdminView\HomeView.xaml.cs">
             <DependentUpon>HomeView.xaml</DependentUpon>
         </Compile>
@@ -154,11 +177,11 @@
         <Compile Include="MVVM\view\AdminView\UsersView.xaml.cs">
             <DependentUpon>UsersView.xaml</DependentUpon>
         </Compile>
-        <Compile Include="MVVM\view\AdminView\okno.xaml.cs">
-          <DependentUpon>okno.xaml</DependentUpon>
-        </Compile>
         <Compile Include="MVVM\view\ProducentView\AddProductView.xaml.cs">
           <DependentUpon>AddProductView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\view\ProducentView\EditProductsView.xaml.cs">
+          <DependentUpon>EditProductsView.xaml</DependentUpon>
         </Compile>
         <Compile Include="MVVM\view\ProducentView\HomeView.xaml.cs">
           <DependentUpon>HomeView.xaml</DependentUpon>
@@ -217,13 +240,20 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </Page>
+        <Page Include="MVVM\view\AdminView\AddProducersView.xaml" />
+        <Page Include="MVVM\view\AdminView\AddProductsView.xaml" />
+        <Page Include="MVVM\view\AdminView\AddUserView.xaml" />
+        <Page Include="MVVM\view\AdminView\EditLoginView.xaml" />
+        <Page Include="MVVM\view\AdminView\EditProducersView.xaml" />
+        <Page Include="MVVM\view\AdminView\EditProductsView.xaml" />
+        <Page Include="MVVM\view\AdminView\EditUserView.xaml" />
         <Page Include="MVVM\view\AdminView\HomeView.xaml" />
         <Page Include="MVVM\view\AdminView\OrdersView.xaml" />
         <Page Include="MVVM\view\AdminView\ProducersView.xaml" />
         <Page Include="MVVM\view\AdminView\ProductsView.xaml" />
         <Page Include="MVVM\view\AdminView\UsersView.xaml" />
-        <Page Include="MVVM\view\AdminView\okno.xaml" />
         <Page Include="MVVM\view\ProducentView\AddProductView.xaml" />
+        <Page Include="MVVM\view\ProducentView\EditProductsView.xaml" />
         <Page Include="MVVM\view\ProducentView\HomeView.xaml" />
         <Page Include="MVVM\view\ProducentView\MyProductsView.xaml" />
         <Page Include="MVVM\view\ProducentView\ProfileView.xaml" />

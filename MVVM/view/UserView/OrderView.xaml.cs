@@ -4,6 +4,7 @@ using System.Text.Json;
 using System.Windows.Controls;
 using bazy3.Entities;
 using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 
 namespace bazy3.MVVM.view.UserView;
 
@@ -14,6 +15,7 @@ public partial class OrderView : UserControl
     {
         InitializeComponent();
         ZamId = id;
+        WyswietlLiczbePrzedmiotow();
         LoadDataFromDatabase();
         OrderCollection.ItemsSource = OrderList;
     }
@@ -58,4 +60,33 @@ public partial class OrderView : UserControl
             throw;
         }
     }
+    
+    private void WyswietlLiczbePrzedmiotow()
+    {
+        string sql = "SELECT licz_ilosc_przedmiotow(:p_id_zamowienia) FROM DUAL";
+
+        try
+        {
+            using (var command = new OracleCommand(sql, App.Con))
+            {
+                command.Parameters.Add("p_id_zamowienia", OracleDbType.Int32).Value = ZamId;
+                object result = command.ExecuteScalar();
+
+                if (result != null)
+                {
+                    int liczbaPrzedmiotow = Convert.ToInt32(result);
+                    LiczbaPrzedmiotowTextBox.Text = liczbaPrzedmiotow.ToString(); // Wyświetlenie liczby przedmiotów w TextBoxie
+                }
+                else
+                {
+                    LiczbaPrzedmiotowTextBox.Text = "Brak danych";
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Błąd: " + ex.Message);
+        }
+    }
+
 }

@@ -5,7 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d">
     <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Button Grid.Row="0" Content="Dodaj nowego klienta" Click="AddNewUser_Click" Margin="0" HorizontalAlignment="Left" Style="{StaticResource ModernButton}"/>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
             <ItemsControl x:Name="ItemsControl" Margin="5">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -23,19 +30,14 @@
                     <DataTemplate>
                         <Border Style="{StaticResource Card}" Margin="0 0 5 5" Height="160">
                             <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="110" />
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition />
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
 
-                                <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Vertical">
+                                <StackPanel Grid.Column="0" Orientation="Vertical">
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Style="{StaticResource CName}" Text="{Binding Imie}" Margin="0 0 5 0"/>
+                                        <TextBlock Style="{StaticResource CName}" Text="{Binding Imie}" Margin="0 2 5 0"/>
                                         <TextBlock Style="{StaticResource CName}" Text="{Binding Nazwisko}" />
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal">
@@ -50,6 +52,35 @@
                                         <TextBlock Style="{StaticResource CRest}" Text="Numer telefonu: " />
                                         <TextBlock Style="{StaticResource CRest}" Text="{Binding NrTel}" />
                                     </StackPanel>
+                                </StackPanel>
+                                
+                                <StackPanel Grid.Column="1" Orientation="Horizontal"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Center">
+                                    <Button
+                                        Click="EditLogin"
+                                        Style="{StaticResource CardAdminButton2}"
+                                        Content="Edytuj dane logowania"
+                                        CommandParameter="{Binding KlientId}"
+                                        Margin="0 0 10 0 ">
+                                        
+                                    </Button>
+                                    
+                                    <Button
+                                        Click="Edit"
+                                        Style="{StaticResource CardAdminButton2}"
+                                        Content="Edytuj dane"
+                                        CommandParameter="{Binding KlientId}"
+                                        Margin="0 0 10 0 ">
+                                        
+                                    </Button>
+                                    
+                                    <Button 
+                                        Click="Del"
+                                        Style="{StaticResource CardAdminButton}"
+                                        Content="Usuń"
+                                        CommandParameter="{Binding KlientId}">
+                                    </Button>
                                 </StackPanel>
                             </Grid>
                         </Border>

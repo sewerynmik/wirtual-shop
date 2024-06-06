@@ -5,8 +5,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d">
     <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-            <ItemsControl x:Name="ItemsControl" Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,5,0">
+            <Button Content="Dodaj nowy produkt" Click="AddNewProduct_Click" Margin="0" HorizontalAlignment="Left" Style="{StaticResource ModernButton}"/>
+            <Button Content="Zwiększ cene o 5%" Click="ZwiekszCeneProcentowoButton_Click" Margin="5 0 0 0" HorizontalAlignment="Left" Style="{StaticResource ModernButton}"/>
+            <TextBox x:Name="FilterTextBox"  VerticalAlignment="Center" Margin=" 5 0 0 0"
+                     Style="{StaticResource ModernTextBox}" 
+                     TextChanged="FilterTextBox_TextChanged"/>
+        </StackPanel>
+        
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="5,5,5,5">
+            <ItemsControl x:Name="ItemsControl">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel Orientation="Horizontal" ItemHeight="160" />
@@ -46,10 +59,26 @@
                                     <Image Stretch="Uniform" MaxHeight="100" Source="{Binding Kategoria2}"/>
                                 </StackPanel>
                                 
-                                <Button Grid.Column="2"
+                                <StackPanel Grid.Column="2" Orientation="Horizontal"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Center">
+                                    <Button
+                                        Click="Edit"
+                                        Style="{StaticResource CardAdminButton}"
+                                        Content="Edytuj"
+                                        CommandParameter="{Binding Id}"
+                                        Margin="0 0 10 0 ">
+                                        
+                                    </Button>
+                                    
+                                    <Button 
                                         Click="Del"
+                                        Style="{StaticResource CardAdminButton}"
+                                        Content="Usuń"
                                         CommandParameter="{Binding Id}">
-                                </Button>
+                                    </Button>
+                                </StackPanel>
+                                
                             </Grid>
                         </Border>
                     </DataTemplate>

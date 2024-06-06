@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
@@ -64,5 +65,20 @@ public partial class ShopView : UserControl
         var id = (int)((Button)sender).CommandParameter;
 
         App.ShopBag.Add(id);
+    }
+
+    private void FilterTextBox_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        var tex = (TextBox)FilterTextBox.Template.FindName("input", FilterTextBox);
+        var filterText = tex.Text.ToLower();
+        if (string.IsNullOrWhiteSpace(filterText))
+        {
+            ItemsControl.ItemsSource = CardList;
+        }
+        else
+        {
+            var filteredList = new ObservableCollection<PrzePro>(CardList.Where(item => item.Nazwa.ToLower().Contains(filterText)));
+            ItemsControl.ItemsSource = filteredList;
+        }
     }
 }

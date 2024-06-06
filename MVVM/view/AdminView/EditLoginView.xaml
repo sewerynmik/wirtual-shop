@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="bazy3.MVVM.view.AdminView.EditLoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:bazy3.MVVM.view.AdminView"
+             mc:Ignorable="d"
+             Background="Transparent">
+    <Grid HorizontalAlignment="Center" Margin="0 40 0 0">
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Login:" Style="{StaticResource EditTextBlock}" />
+            <TextBox Text="{Binding SelectedLogin.LoginName, Mode=TwoWay}" Style="{StaticResource ModernTextBoxFull}" Name="LoginName"/>
+
+            <TextBlock Text="Hasło:" Style="{StaticResource EditTextBlock}" />
+            <TextBox Text="{Binding SelectedLogin.Haslo, Mode=TwoWay}" Style="{StaticResource ModernTextBoxFull}" Name="Haslo"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                <Button Content="Zapisz" Click="SaveButton_Click" Style="{StaticResource ModernButton2}" Width="100" Margin="0 0 5 0" />
+                <Button Content="Anuluj" Click="CancelButton_Click" Style="{StaticResource ModernButton2}" Width="100" Margin="5 0 0 0" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

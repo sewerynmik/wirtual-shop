@@ -8,4 +8,6 @@ public class PrzePro
     public Cena Cena { get; set; }
     public string Kategoria { get; set; }
     public string Kategoria2 { get; set; }
+    
+    public int ProducentId { get; set; }
 }

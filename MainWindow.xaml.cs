@@ -48,9 +48,6 @@ public partial class MainWindow
         var textBox2 = (PasswordBox)Pass.Template.FindName("input", Pass);
         var ps = textBox2.Password;
 
-        lo = "admin";
-        ps = "admin";
-
         var sql =
             $"SELECT \"active\", \"klient_id\", \"type\" FROM \"login\" WHERE \"login\" = '{lo}' AND \"haslo\" = '{ps}'";
 
@@ -76,21 +73,18 @@ public partial class MainWindow
                         switch (type)
                         {
                             case "u":
-                                last_login();
                                 var user = new User2();
                                 user.InitializeComponent();
                                 user.Show();
                                 Close();
                                 break;
                             case "p":
-                                last_login();
                                 var producent = new Producent();
                                 producent.InitializeComponent();
                                 producent.Show();
                                 Close();
                                 break;
                             case "a":
-                                last_login();
                                 var admin = new Admin();
                                 admin.InitializeComponent();
                                 admin.Show();
@@ -117,34 +111,5 @@ public partial class MainWindow
     {
         if (e.LeftButton == MouseButtonState.Pressed)
             DragMove();
-    }
-
-    private void last_login()
-    {
-        string komunikat = null;
-
-        using (var command = new OracleCommand("BEGIN :result := sprawdz_ostatnia_zmiane_hasla(:id); END;", App.Con))
-        {
-            command.CommandType = CommandType.Text;
-
-            OracleParameter resultParameter = new OracleParameter("result", OracleDbType.Varchar2, 200);
-            resultParameter.Direction = ParameterDirection.ReturnValue;
-            command.Parameters.Add(resultParameter);
-
-            command.Parameters.Add("id", OracleDbType.Int32).Value = App.UserId;
-
-            try
-            {
-                command.ExecuteNonQuery();
-                komunikat = resultParameter.Value?.ToString();
-
-                // TODO wyświetlenie komnikatu
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-        }
     }
 }

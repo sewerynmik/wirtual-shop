@@ -15,8 +15,6 @@
         <Setter Property="FontSize" Value="22" />
         <Setter Property="Foreground" Value="DarkGray" />
         <Setter Property="FontWeight" Value="Medium" />
-
-
     </Style>
     
     <Style TargetType="{x:Type TextBlock}" x:Key="ErrorTextBlock">
@@ -35,5 +33,13 @@
         <Setter Property="Opacity" Value="0"/>
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="FontWeight" Value="Light"/>
+    </Style>
+    
+    <Style TargetType="{x:Type TextBlock}" x:Key="EditTextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Foreground" Value="DarkGray" />
+        <Setter Property="FontWeight" Value="thin" />
     </Style>
 </ResourceDictionary>

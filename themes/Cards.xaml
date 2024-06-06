@@ -89,5 +89,80 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    
+    
+    <Style TargetType="{x:Type Button}" x:Key="CardAdminButton">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="10"
+                            Width="80"
+                            Height="80"
+                            Background="#353340"
+                            x:Name="ButtonBorder">
+
+                        <Grid>
+                            <Rectangle StrokeThickness="1" />
+
+                            <TextBlock IsHitTestVisible="False"
+                                       Text="{TemplateBinding Content}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       FontSize="18"
+                                       Foreground="DarkGray" />
+                        </Grid>
+
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand" />
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="#555555" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="{x:Type Button}" x:Key="CardAdminButton2">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="10"
+                            Width="120"
+                            Height="80"
+                            Background="#353340"
+                            x:Name="ButtonBorder">
+
+                        <Grid>
+                            <Rectangle StrokeThickness="1" />
+
+                            <TextBlock IsHitTestVisible="False"
+                                       Text="{TemplateBinding Content}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       FontSize="12"
+                                       Foreground="DarkGray" />
+                        </Grid>
+
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand" />
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="#555555" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>

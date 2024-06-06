@@ -88,10 +88,6 @@
             <DataTemplate DataType="{x:Type producerViewModel:MyProductsViewModel}">
                 <producerView:MyProductsView/>
             </DataTemplate>
-            
-            <DataTemplate DataType="{x:Type producerViewModel:AddProductViewModel}">
-                <producerView:AddProductView/>
-            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

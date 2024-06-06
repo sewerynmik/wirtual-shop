@@ -5,8 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:bazy3.MVVM.view.ProducentView"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             Background="Transparent">
     <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 0">
+            <TextBlock Text="Udział w rynku: " Style="{StaticResource ModernTextBlock}"/>
+            <TextBlock Name="ProcentPrzedmiotowTextBox" Style="{StaticResource ModernTextBlock}" />
+            <TextBlock Text="%" Style="{StaticResource ModernTextBlock}"/>
+
+        </StackPanel>
         
     </Grid>
 </UserControl>

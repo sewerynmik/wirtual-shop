@@ -38,6 +38,17 @@
                                     <TextBlock Style="{StaticResource CRest}" Text="{Binding KlienitId}" />
                                     <TextBlock Style="{StaticResource CRest}" Text="{Binding Data}" />
                                 </StackPanel>
+                                
+                                <StackPanel Grid.Column="2" Orientation="Horizontal"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Center">
+                                    <Button 
+                                        Click="Del"
+                                        Style="{StaticResource CardAdminButton}"
+                                        Content="Usuń"
+                                        CommandParameter="{Binding ZamowienieId}">
+                                    </Button>
+                                </StackPanel>
                             </Grid>
                         </Border>
                     </DataTemplate>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Controls;
 using Oracle.ManagedDataAccess.Client;
 using System.Windows;
@@ -44,4 +45,48 @@ public partial class OrdersView : UserControl
             MessageBox.Show(exception.Message);
         }
     }
+
+
+    private void Del(object sender, RoutedEventArgs e)
+    {
+        var id = (int)((Button)sender).CommandParameter;
+        
+        var deleteZamPrzeSql = $"DELETE FROM \"zam_prze\" WHERE \"id_zam\" = :id";
+        try
+        {
+            using (var command = new OracleCommand(deleteZamPrzeSql, App.Con))
+            {
+                command.Parameters.Add(new OracleParameter("id", id));
+                command.ExecuteNonQuery();
+            }
+        }
+        catch (Exception exception)
+        {
+            MessageBox.Show(exception.Message);
+            return;
+        }
+        
+        var deleteProductSql = $"DELETE FROM \"zamowienia\" WHERE \"zamowienie_id\" = :id";
+        try
+        {
+            using (var command = new OracleCommand(deleteProductSql, App.Con))
+            {
+                command.Parameters.Add(new OracleParameter("id", id));
+                command.ExecuteNonQuery();
+            }
+
+            // Usunięcie produktu z listy wyświetlanych produktów
+            var itemToRemove = OrdersList.FirstOrDefault(item => item.ZamowienieId == id);
+            if (itemToRemove != null)
+            {
+                OrdersList.Remove(itemToRemove);
+            }
+        }
+        catch (Exception exception)
+        {
+            MessageBox.Show(exception.Message);
+            return;
+        }
+    }
+
 }

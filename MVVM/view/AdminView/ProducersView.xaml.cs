@@ -51,4 +51,69 @@ public partial class ProducersView : UserControl
             MessageBox.Show(exception.Message);
         }
     }
+
+    private void Edit(object sender, RoutedEventArgs e)
+    {
+        var producent = (Producenci)((Button)sender).DataContext;
+
+        var producentId = producent.ProducentId;
+        
+        var editProducersView = new EditProducersView(producentId);
+        
+        App.MainVm.CurrentView = editProducersView;
+    }
+
+    private void Del(object sender, RoutedEventArgs e)
+    {
+        var producent = (Producenci)((Button)sender).DataContext;
+
+        var producentId = producent.ProducentId;
+
+        var sqlCheckProducts = "SELECT COUNT(*) FROM \"przedmioty\" WHERE \"producent_id\" = :id";
+        int productsCount = 0;
+
+        try
+        {
+            using (var command = new OracleCommand(sqlCheckProducts, App.Con))
+            {
+                command.Parameters.Add(new OracleParameter("id", producentId));
+                productsCount = Convert.ToInt32(command.ExecuteScalar());
+            }
+        }
+        catch (Exception exception)
+        {
+            MessageBox.Show(exception.Message);
+            return;
+        }
+
+        if (productsCount > 0)
+        {
+            MessageBox.Show("Nie można usunąć tego producenta, ponieważ jest powiązany z produktami.");
+            return;
+        }
+
+        var sqlDeleteProducent = "DELETE FROM \"producenci\" WHERE \"producent_id\" = :id";
+
+        try
+        {
+            using (var command = new OracleCommand(sqlDeleteProducent, App.Con))
+            {
+                command.Parameters.Add(new OracleParameter("id", producentId));
+                command.ExecuteNonQuery();
+            }
+            
+            ProducersList.Remove(producent);
+        }
+        catch (Exception exception)
+        {
+            MessageBox.Show(exception.Message);
+        }
+    }
+
+    private void AddNewProducent_Click(object sender, RoutedEventArgs e)
+    {
+        var addProducersView = new AddProducersView();
+        
+        App.MainVm.CurrentView = addProducersView;
+    }
 }

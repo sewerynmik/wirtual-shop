@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="bazy3.MVVM.view.AdminView.AddUserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             Background="Transparent">
+    <Grid HorizontalAlignment="Center" Margin="0 40 0 0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Column="0">
+            <TextBlock Text="Imię:" Style="{StaticResource EditTextBlock}" />
+            <TextBox Text="" Style="{StaticResource ModernTextBoxFull}" Name="Imie"/>
+
+            <TextBlock Text="Nazwisko:" Style="{StaticResource EditTextBlock}" />
+            <TextBox Text="" Style="{StaticResource ModernTextBoxFull}" Name="Nazwisko"/>
+
+            <TextBlock Text="PESEL:" Style="{StaticResource EditTextBlock}" />
+            <TextBox Text="" Style="{StaticResource ModernTextBoxFull}" Name="Pesel"/>
+
+            <TextBlock Text="Email:" Style="{StaticResource EditTextBlock}" />
+            <TextBox Text="" Style="{StaticResource ModernTextBoxFull}" Name="Email"/>
+
+            <TextBlock Text="Nr Tel:" Style="{StaticResource EditTextBlock}" />
+            <TextBox Text="" Style="{StaticResource ModernTextBoxFull}" Name="NrTel"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Column="1">
+            <!-- Login Fields -->
+            <TextBlock Text="Login:" Style="{StaticResource EditTextBlock}" />
+            <TextBox Text="" Style="{StaticResource ModernTextBoxFull}" Name="Login"/>
+
+            <TextBlock Text="Hasło:" Style="{StaticResource EditTextBlock}" />
+            <PasswordBox Password="" Style="{StaticResource ModernTextBoxEmpty}" Name="Haslo"/>
+
+            <!-- Buttons -->
+            <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                <Button Content="Zapisz" Click="SaveButton_Click" Style="{StaticResource ModernButton2}" Width="100" Margin="0 0 5 0" />
+                <Button Content="Anuluj" Click="CancelButton_Click" Style="{StaticResource ModernButton2}" Width="100" Margin="5 0 0 0" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
