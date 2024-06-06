@@ -32,6 +32,7 @@
 
         <TextBlock Grid.Row="3" Grid.Column="1"
                    Text="" Opacity="0"
+                   Style="{StaticResource ErrorTextBlock2}"
                    x:Name="Mess" />
 
         <Button Grid.Column="1" Grid.Row="4"

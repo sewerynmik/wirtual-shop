@@ -21,26 +21,32 @@
                 </ItemsControl.ItemContainerStyle>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border Style="{StaticResource karta}" Margin="0 0 5 5">
+                        <Border Style="{StaticResource Card}" Margin="0 0 5 5">
                             <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="110" />
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-
                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
                                     <ColumnDefinition />
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
 
-                                <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Vertical">
+                                <StackPanel Grid.Column="0" Orientation="Vertical">
                                     <TextBlock Style="{StaticResource CName}" Text="{Binding Nazwa}" />
-                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding Producent}" />
-                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding Cena}" />
-                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding Ilosc}" />
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource CRest}" Text="Cena: "/>
+                                        <TextBlock Style="{StaticResource CRest}" Text="{Binding Cena.X}" />
+                                        <TextBlock Style="{StaticResource CRest}" Text="{Binding Cena.Y}" />
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource CRest}" Text="Producent: " />
+                                        <TextBlock Style="{StaticResource CRest}" Text="{Binding Producent}" />
+                                    </StackPanel>
                                 </StackPanel>
                                 
-                                <Button Grid.Column="1" Grid.Row="1"
+                                <StackPanel Grid.Column="1">
+                                    <Image Stretch="Uniform" MaxHeight="100" Source="{Binding Kategoria2}"/>
+                                </StackPanel>
+                                
+                                <Button Grid.Column="2"
                                         Click="Del"
                                         CommandParameter="{Binding Id}">
                                 </Button>

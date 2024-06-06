@@ -21,21 +21,27 @@
                 </ItemsControl.ItemContainerStyle>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border Style="{StaticResource karta}" Margin="0 0 5 5">
+                        <Border Style="{StaticResource Card}" Margin="0 0 5 5">
                             <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="110" />
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
 
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition />
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
 
-                                <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Vertical">
+                                <StackPanel Grid.Column="0" Orientation="Vertical">
                                     <TextBlock Style="{StaticResource CName}" Text="{Binding Nazwa}" />
-                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding Opis}" />
+                                    
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource CRest}" Text="Kod pocztowy: "/>
+                                        <TextBlock Style="{StaticResource CRest}" Text="{Binding KodPocztowy}" />
+                                    </StackPanel>
+                                    
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource CRest}" Text="Adres: "/>
+                                        <TextBlock Style="{StaticResource CRest}" Text="{Binding Adres.X}" />
+                                        <TextBlock Style="{StaticResource CRest}" Text="{Binding Adres.Y}" />
+                                    </StackPanel>
                                 </StackPanel>
                             </Grid>
                         </Border>

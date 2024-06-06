@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Text.Json;
 using System.Windows.Controls;
 using Oracle.ManagedDataAccess.Client;
 using System.Windows;
@@ -28,11 +29,20 @@ public partial class ProducersView : UserControl
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
+                    {
+                        var adresString = reader.GetString(3);
+                        
+                        var adres = JsonSerializer.Deserialize<Adres>(adresString);
+                        
                         ProducersList.Add(new Producenci
                         {
                             ProducentId = reader.GetInt32(0),
                             Nazwa = reader.GetString(1),
+                            KodPocztowy = reader.GetString(2),
+                            Adres = adres
                         });
+                    }
+                    
                 }
             }
         }

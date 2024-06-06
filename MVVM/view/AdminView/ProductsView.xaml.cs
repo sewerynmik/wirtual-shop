@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
 using bazy3.Entities;
@@ -22,7 +23,7 @@ public partial class ProductsView : UserControl
 
     private void LoadDataFromDatabase()
     {
-        var sql = "SELECT * FROM \"karty\"";
+        var sql = $"SELECT * FROM \"prze_pro\"";
         try
         {
             using (var command = new OracleCommand(sql, App.Con))
@@ -30,13 +31,25 @@ public partial class ProductsView : UserControl
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
+                    {
+                        var cenaString = reader.GetString(3);
+                        
+                        var cena = JsonSerializer.Deserialize<Cena>(cenaString);
+                        
+                        var kategoria = reader.GetString(4);
+                        var kategoria2 = $"../../../images/{kategoria}.png";
+                        
                         CardList.Add(new PrzePro
                         {
                             Id = reader.GetInt32(0),
                             Nazwa = reader.GetString(1),
                             Producent = reader.GetString(2),
-                            // Cena = reader.GetDecimal(3),
+                            Cena = cena,
+                            Kategoria = kategoria,
+                            Kategoria2 = kategoria2
                         });
+                    }
+                        
                 }
             }
         }

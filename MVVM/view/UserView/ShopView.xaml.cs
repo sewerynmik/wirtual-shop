@@ -63,6 +63,6 @@ public partial class ShopView : UserControl
     {
         var id = (int)((Button)sender).CommandParameter;
 
-        
+        App.ShopBag.Add(id);
     }
 }

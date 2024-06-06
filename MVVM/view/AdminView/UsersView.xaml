@@ -21,7 +21,7 @@
                 </ItemsControl.ItemContainerStyle>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border Style="{StaticResource karta}" Margin="0 0 5 5">
+                        <Border Style="{StaticResource Card}" Margin="0 0 5 5" Height="160">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="110" />
@@ -34,11 +34,22 @@
                                 </Grid.ColumnDefinitions>
 
                                 <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Vertical">
-                                    <TextBlock Style="{StaticResource CName}" Text="{Binding Imie}" />
-                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding Nazwisko}" />
-                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding Email}" />
-                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding NrTel}" />
-                                    <TextBlock Style="{StaticResource CRest}" Text="{Binding Pesel}" />
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource CName}" Text="{Binding Imie}" Margin="0 0 5 0"/>
+                                        <TextBlock Style="{StaticResource CName}" Text="{Binding Nazwisko}" />
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource CRest}" Text="Email: "/>
+                                        <TextBlock Style="{StaticResource CRest}" Text="{Binding Email}" />
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal"> 
+                                        <TextBlock Style="{StaticResource CRest}" Text="Pesel: " />
+                                        <TextBlock Style="{StaticResource CRest}" Text="{Binding Pesel}" />
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource CRest}" Text="Numer telefonu: " />
+                                        <TextBlock Style="{StaticResource CRest}" Text="{Binding NrTel}" />
+                                    </StackPanel>
                                 </StackPanel>
                             </Grid>
                         </Border>

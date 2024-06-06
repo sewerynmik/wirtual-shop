@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using bazy3.Entities;
+using bazy3.MVVM.view.UserView;
 using Oracle.ManagedDataAccess.Client;
 
 namespace bazy3.MVVM.view;
@@ -49,6 +50,8 @@ public partial class ProfileView : UserControl
     {
         var id = (int)((Button)sender).CommandParameter;
         
+        var ordeView = new OrderView(id);
         
+        App.MainVm.CurrentView = ordeView;
     }
 }

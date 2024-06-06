@@ -48,8 +48,8 @@ public partial class MainWindow
         var textBox2 = (PasswordBox)Pass.Template.FindName("input", Pass);
         var ps = textBox2.Password;
 
-        lo = "user";
-        ps = "user";
+        lo = "admin";
+        ps = "admin";
 
         var sql =
             $"SELECT \"active\", \"klient_id\", \"type\" FROM \"login\" WHERE \"login\" = '{lo}' AND \"haslo\" = '{ps}'";

@@ -108,6 +108,7 @@
         <Compile Include="Entities\Przedmioty.cs" />
         <Compile Include="Entities\Zam_prze.cs" />
         <Compile Include="Entities\Zamowienia.cs" />
+        <Compile Include="Entities\zam_prze_data_view.cs" />
         <Compile Include="MainWindow.xaml.cs">
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>
@@ -135,6 +136,7 @@
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Compile>
         <Compile Include="MVVM\viewModel\UserViewModel\OptionsViewModel.cs" />
+        <Compile Include="MVVM\viewModel\UserViewModel\OrderViewModel.cs" />
         <Compile Include="MVVM\viewModel\UserViewModel\ProfileViewModel.cs" />
         <Compile Include="MVVM\viewModel\UserViewModel\ShopViewModel.cs" />
         <Compile Include="MVVM\view\AdminView\HomeView.xaml.cs">
@@ -186,6 +188,9 @@
         <Compile Include="MVVM\view\UserView\OptionsView.xaml.cs">
             <DependentUpon>OptionsView.xaml</DependentUpon>
         </Compile>
+        <Compile Include="MVVM\view\UserView\OrderView.xaml.cs">
+          <DependentUpon>OrderView.xaml</DependentUpon>
+        </Compile>
         <Compile Include="MVVM\view\UserView\ProfileView.xaml.cs">
             <DependentUpon>ProfileView.xaml</DependentUpon>
         </Compile>
@@ -225,13 +230,12 @@
         <Page Include="MVVM\view\UserView\CardView.xaml" />
         <Page Include="MVVM\view\UserView\ChangingEmailView.xaml" />
         <Page Include="MVVM\view\UserView\ChangingPassView.xaml" />
-        <Page Include="MVVM\view\UserView\ChangingPHView.xaml">
-            <DependentUpon>OptionsView.xaml</DependentUpon>
-        </Page>
+        <Page Include="MVVM\view\UserView\ChangingPHView.xaml" />
         <Page Include="MVVM\view\UserView\HomeView.xaml">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Page>
         <Page Include="MVVM\view\UserView\OptionsView.xaml" />
+        <Page Include="MVVM\view\UserView\OrderView.xaml" />
         <Page Include="MVVM\view\UserView\ProfileView.xaml" />
         <Page Include="MVVM\view\UserView\ShopView.xaml" />
         <Page Include="MVVM\view\UserView\TestView.xaml" />

@@ -96,3 +96,5 @@ C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ProducentView\Add
 C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\ProducentView\AddProductView.baml
 C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\AdminView\okno.g.cs
 C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\AdminView\okno.baml
+C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\UserView\OrderView.g.cs
+C:\Users\Seweryn\RiderProjects\bazy3\bazy3\obj\Debug\MVVM\view\UserView\OrderView.baml
