@@ -101,7 +101,7 @@
                     <Border CornerRadius="10"
                             Width="80"
                             Height="80"
-                            Background="#353340"
+                            Background="#918B9C"
                             x:Name="ButtonBorder">
 
                         <Grid>
@@ -112,7 +112,7 @@
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        FontSize="18"
-                                       Foreground="DarkGray" />
+                                       Foreground="Black" />
                         </Grid>
 
                     </Border>
@@ -138,7 +138,7 @@
                     <Border CornerRadius="10"
                             Width="120"
                             Height="80"
-                            Background="#353340"
+                            Background="#918B9C"
                             x:Name="ButtonBorder">
 
                         <Grid>
@@ -149,7 +149,7 @@
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        FontSize="12"
-                                       Foreground="DarkGray" />
+                                       Foreground="Black" />
                         </Grid>
 
                     </Border>

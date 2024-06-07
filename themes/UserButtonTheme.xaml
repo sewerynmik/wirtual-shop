@@ -48,7 +48,7 @@
                     <Border CornerRadius="10"
                             Width="200"
                             Height="40"
-                            Background="#353340"
+                            Background="#918B9C"
                             x:Name="ButtonBorder">
 
                         <Grid>
@@ -59,7 +59,7 @@
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        FontSize="11"
-                                       Foreground="DarkGray" />
+                                       Foreground="Black" />
                         </Grid>
 
                     </Border>
@@ -84,7 +84,7 @@
                     <Border CornerRadius="10"
                             Width="{TemplateBinding Width}"
                             Height="40"
-                            Background="#353340"
+                            Background="#918B9C"
                             x:Name="ButtonBorder">
 
                         <Grid>
@@ -95,7 +95,7 @@
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        FontSize="11"
-                                       Foreground="DarkGray" />
+                                       Foreground="Black" />
                         </Grid>
 
                     </Border>

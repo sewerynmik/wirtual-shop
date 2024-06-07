@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style TargetType="{x:Type TextBlock}" x:Key="TextBlockStyle">
-        <Setter Property="Foreground" Value="#0055FF" />
+        <Setter Property="Foreground" Value="#0049DB" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="FontWeight" Value="Medium" />

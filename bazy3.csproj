@@ -319,7 +319,6 @@
         <Content Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd" />
     </ItemGroup>
     <ItemGroup>
-        <Folder Include="Fonts\" />
         <Folder Include="MVVM\model\" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
