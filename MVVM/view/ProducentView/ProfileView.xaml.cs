@@ -39,8 +39,15 @@ namespace bazy3.MVVM.view.ProducentView
                     if (!result.IsNull)
                     {
                         string procent = result.ToString();
-                        string procent2 = procent.Substring(0, 5);
-                        ProcentPrzedmiotowTextBox.Text = procent2; 
+                        if (procent.Length >= 5)
+                        {
+                            string procent2 = procent.Substring(0, 5);
+                            ProcentPrzedmiotowTextBox.Text = procent2; 
+                        }
+                        else
+                        {
+                            ProcentPrzedmiotowTextBox.Text = procent;
+                        }
                     }
                     else
                     {

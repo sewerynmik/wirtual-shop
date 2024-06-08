@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using bazy3.Entities;
@@ -21,14 +22,62 @@ namespace bazy3.MVVM.view.AdminView
                 MessageBox.Show("Nowy klient i login zostały dodane.");
                 App.MainVm.CurrentView = new UsersView();
             }
-            else
-            {
-                MessageBox.Show("Wprowadź poprawne dane.");
-            }
         }
 
         private bool ValidateFields()
         {
+            var imieT = (TextBox)Imie.Template.FindName("input", Imie);
+            var nazwiskoT = (TextBox)Nazwisko.Template.FindName("input", Nazwisko);
+            var peselT = (TextBox)Pesel.Template.FindName("input", Pesel);
+            var emailT = (TextBox)Email.Template.FindName("input", Email);
+            var nrTelT = (TextBox)NrTel.Template.FindName("input", NrTel);
+
+            var loginT = (TextBox)Login.Template.FindName("input", Login);
+            var hasloPB = (PasswordBox)Haslo.Template.FindName("input", Haslo);
+            var haslo = hasloPB.Password;
+
+            if (string.IsNullOrEmpty(imieT.Text) || imieT.Text.Length < 3)
+            {
+                MessageBox.Show("Imię musi mieć co najmniej 3 znaki.");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(nazwiskoT.Text) || nazwiskoT.Text.Length < 3)
+            {
+                MessageBox.Show("Nazwisko musi mieć co najmniej 3 znaki.");
+                return false;
+            }
+
+            if (!Regex.IsMatch(peselT.Text, @"^\d{11}$"))
+            {
+                MessageBox.Show("PESEL musi składać się z 11 cyfr.");
+                return false;
+            }
+
+            if (!Regex.IsMatch(emailT.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                MessageBox.Show("Wprowadź poprawny adres email.");
+                return false;
+            }
+
+            if (!Regex.IsMatch(nrTelT.Text, @"^\d{9}$"))
+            {
+                MessageBox.Show("Numer telefonu musi składać się z 9 cyfr.");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(loginT.Text) || loginT.Text.Length < 3)
+            {
+                MessageBox.Show("Login musi mieć co najmniej 3 znaki.");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(haslo) || haslo.Length < 6)
+            {
+                MessageBox.Show("Hasło musi mieć co najmniej 6 znaków.");
+                return false;
+            }
+
             return true;
         }
 
@@ -46,7 +95,6 @@ namespace bazy3.MVVM.view.AdminView
                 var hasloPB = (PasswordBox)Haslo.Template.FindName("input", Haslo);
                 var haslo = hasloPB.Password;
 
-                // Wykonaj operacje dodawania klienta do bazy danych
                 var sqlClient = "INSERT INTO \"klienci\" (\"imie\", \"nazwisko\", \"pesel\", \"email\", \"nr_tel\") VALUES (:imie, :nazwisko, :pesel, :email, :nrTel)";
                 using (var command = new OracleCommand(sqlClient, App.Con))
                 {
@@ -92,7 +140,6 @@ namespace bazy3.MVVM.view.AdminView
                     }
                     else
                     {
-                        // Jeśli nie ma żadnych danych w tabeli klienci, zwracamy wartość 1 jako początkowe klient_id
                         return 1;
                     }
                 }
@@ -100,15 +147,13 @@ namespace bazy3.MVVM.view.AdminView
             catch (Exception exception)
             {
                 MessageBox.Show("Wystąpił błąd podczas pobierania ostatniego klienta: " + exception.Message);
-                // W przypadku błędu, zwracamy wartość 0 jako domyślną
                 return 0;
             }
         }
 
-
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            App.MainVm.CurrentView = new UsersView(); // Zakładam, że istnieje UsersView jako widok dla klientów
+            App.MainVm.CurrentView = new UsersView();
         }
     }
 }

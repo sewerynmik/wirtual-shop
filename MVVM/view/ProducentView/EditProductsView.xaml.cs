@@ -103,14 +103,33 @@ namespace bazy3.MVVM.view.ProducentView
         
         private bool ValidateFields()
         {
-            if (string.IsNullOrEmpty(SelectedProduct.Nazwa))
+            var nazwaT = (TextBox)Nazwa.Template.FindName("input", Nazwa);
+            var cenaXT = (TextBox)CenaX.Template.FindName("input", CenaX);
+            var cenaYT = (TextBox)CenaY.Template.FindName("input", CenaY);
+            var kategoriaT = (TextBox)Kategoria.Template.FindName("input", Kategoria);
+
+            if (string.IsNullOrWhiteSpace(nazwaT.Text) || string.IsNullOrWhiteSpace(cenaXT.Text) || string.IsNullOrWhiteSpace(cenaYT.Text) || string.IsNullOrWhiteSpace(kategoriaT.Text))
             {
-                MessageBox.Show("Pole 'Nazwa' nie może być puste.");
+                MessageBox.Show("Wszystkie pola są wymagane.");
+                return false;
+            }
+            
+            if (!decimal.TryParse(cenaXT.Text, out _))
+            {
+                MessageBox.Show("Pierwsza wartość musi być liczbą.");
+                return false;
+            }
+
+            if (cenaYT.Text.Length > 3)
+            {
+                MessageBox.Show("Waluta nie może mieć więcej niż 3 litery.");
                 return false;
             }
 
             return true;
         }
+
+
         
         private void UpdateProduct()
         {

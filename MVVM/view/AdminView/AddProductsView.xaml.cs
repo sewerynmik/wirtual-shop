@@ -17,7 +17,7 @@ namespace bazy3.MVVM.view.AdminView
         }
 
         public Przedmioty NewProduct { get; set; } = new();
-        public Collection<Producenci> ProducentsList { get; set; } = new();
+        public ObservableCollection<Producenci> ProducentsList { get; set; } = new ObservableCollection<Producenci>();
 
         private void LoadProducents()
         {
@@ -53,15 +53,51 @@ namespace bazy3.MVVM.view.AdminView
                 MessageBox.Show("Nowy przedmiot został dodany.");
                 App.MainVm.CurrentView = new ProductsView();
             }
-            else
-            {
-                MessageBox.Show("Wprowadź poprawne dane.");
-            }
         }
 
         private bool ValidateFields()
         {
-           
+            var nazwaT = (TextBox)Nazwa.Template.FindName("input", Nazwa);
+            var nazwa = nazwaT.Text;
+
+            var cenaXT = (TextBox)CenaX.Template.FindName("input", CenaX);
+            var cenaX = cenaXT.Text;
+
+            var cenaYT = (TextBox)CenaY.Template.FindName("input", CenaY);
+            var cenaY = cenaYT.Text;
+
+            var kategoriaT = (TextBox)Kategoria.Template.FindName("input", Kategoria);
+            var kategoria = kategoriaT.Text;
+
+            if (string.IsNullOrEmpty(nazwa) || nazwa.Length < 3)
+            {
+                MessageBox.Show("Nazwa produktu musi mieć co najmniej 3 znaki.");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(cenaX))
+            {
+                MessageBox.Show("Nieprawidłowa cena.");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(cenaY))
+            {
+                MessageBox.Show("Nieprawidłowa cena.");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(kategoria))
+            {
+                MessageBox.Show("Kategoria nie może być pusta.");
+                return false;
+            }
+
+            if (NewProduct.ProducentId <= 0)
+            {
+                MessageBox.Show("Wybierz poprawnego producenta.");
+                return false;
+            }
 
             return true;
         }
@@ -81,8 +117,6 @@ namespace bazy3.MVVM.view.AdminView
 
                 var kategoriaT = (TextBox)Kategoria.Template.FindName("input", Kategoria);
                 var kategoria = kategoriaT.Text;
-                
-                Console.WriteLine(NewProduct.ProducentId);
 
                 var sql = "INSERT INTO \"przedmioty\" (\"nazwa\", \"producent_id\", \"cena\", \"kategoria\") VALUES (:nazwa, :producentId, CENA(:cenaX, :cenaY), :kategoria)";
                 using (var command = new OracleCommand(sql, App.Con))

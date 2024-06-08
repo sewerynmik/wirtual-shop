@@ -52,7 +52,7 @@
                 </RadioButton>
                 <RadioButton Style="{StaticResource UserMenuButton}"
                              Command="{Binding MyProductsViewCommand}"
-                             Tag="blue">
+                             Tag="aqua">
 
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="ShoppingCart" Style="{StaticResource MenuButtonIcon}" />
@@ -86,7 +86,7 @@
                     Click="Quit"
                     Style="{StaticResource TurnOffButton}"
                     Margin="0,0,10,0">
-                <Image Source="../images/icons8-exit-50.png" />
+                <fa:ImageAwesome Icon="Close" Foreground="White"/>
             </Button>
 
             <ContentControl Grid.Row="1" Grid.Column="1"

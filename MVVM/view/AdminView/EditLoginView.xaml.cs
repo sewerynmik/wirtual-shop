@@ -13,7 +13,6 @@ namespace bazy3.MVVM.view.AdminView
         public EditLoginView(int id)
         {
             loginId = id;
-            Console.WriteLine(id);
             InitializeComponent();
             DataContext = this;
             LoadLoginData(id);
@@ -59,14 +58,19 @@ namespace bazy3.MVVM.view.AdminView
                 MessageBox.Show("Dane logowania zostały zaktualizowane.");
                 App.MainVm.CurrentView = new UsersView(); 
             }
-            else
-            {
-                MessageBox.Show("Wprowadź poprawne dane.");
-            }
         }
         
         private bool ValidateFields()
         {
+            var loginT = (TextBox)LoginName.Template.FindName("input", LoginName);
+            var hasloPB = (TextBox)Haslo.Template.FindName("input", Haslo);
+
+            if (string.IsNullOrEmpty(loginT.Text) || string.IsNullOrEmpty(hasloPB.Text))
+            {
+                MessageBox.Show("Login i hasło są wymagane.");
+                return false;
+            }
+
             return true; 
         }
         
@@ -75,13 +79,13 @@ namespace bazy3.MVVM.view.AdminView
             try
             {
                 var loginT = (TextBox)LoginName.Template.FindName("input", LoginName);
-                var hasloT = (TextBox)Haslo.Template.FindName("input", Haslo);
+                var hasloPB = (TextBox)Haslo.Template.FindName("input", Haslo);
 
                 var sql = "UPDATE \"login\" SET \"login\" = :login, \"haslo\" = :haslo WHERE \"klient_id\" = :id";
                 using (var command = new OracleCommand(sql, App.Con))
                 {
                     command.Parameters.Add(new OracleParameter("login", loginT.Text));
-                    command.Parameters.Add(new OracleParameter("haslo", hasloT.Text));
+                    command.Parameters.Add(new OracleParameter("haslo", hasloPB.Text));
                     command.Parameters.Add(new OracleParameter("id", loginId));
 
                     command.ExecuteNonQuery();
@@ -95,7 +99,7 @@ namespace bazy3.MVVM.view.AdminView
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            App.MainVm.CurrentView = new UsersView(); // Ponownie, prawdopodobnie chciałeś zmienić widok na widok logowań, a nie użytkowników
+            App.MainVm.CurrentView = new UsersView();
         }
     }
 }

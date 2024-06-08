@@ -68,7 +68,7 @@
                                         Style="{StaticResource CardShopButton}"
                                         Click="Edit" 
                                         CommandParameter="{Binding Id}">
-                                    <fa:ImageAwesome Icon="Gear" />
+                                    <fa:ImageAwesome Icon="Gear" Foreground="#918B9C"/>
                                 </Button>
                             </Grid>
                         </Border>

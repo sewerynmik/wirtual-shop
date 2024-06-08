@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using bazy3.Entities;
@@ -45,10 +45,8 @@ namespace bazy3.MVVM.view.AdminView
                                 Nazwa = reader.GetString(1),
                                 KodPocztowy = reader.GetString(2),
                                 Adres = adres
-                                
                             };
                         }
-                        
                     }
                 }
             }
@@ -57,25 +55,86 @@ namespace bazy3.MVVM.view.AdminView
                 MessageBox.Show(exception.Message);
             }
         }
+
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ValidateFields())
+            if (!ValidateFields())
             {
-                UpdateProducer();
-                MessageBox.Show("Producent został zaktualizowany.");
-                App.MainVm.CurrentView = new ProducersView();
+                return;
             }
-            else
+
+            if (!IsUniqueProducerName(SelectedProducer.Nazwa))
             {
-                MessageBox.Show("Wprowadź poprawne dane.");
+                MessageBox.Show("Producent o takiej nazwie już istnieje.");
             }
+            
+            UpdateProducer();
+            MessageBox.Show("Producent został zaktualizowany.");
+            App.MainVm.CurrentView = new ProducersView();
+
         }
         
         private bool ValidateFields()
         {
+            var nazwaT = (TextBox)Nazwa.Template.FindName("input", Nazwa);
+            var nazwa = nazwaT.Text;
+
+            var kodPocztowyT = (TextBox)KodPocztowy.Template.FindName("input", KodPocztowy);
+            var kodPocztowy = kodPocztowyT.Text;
+
+            var adresXT = (TextBox)AdresX.Template.FindName("input", AdresX);
+            var adresX = adresXT.Text;
+
+            var adresYT = (TextBox)AdresY.Template.FindName("input", AdresY);
+            var adresY = adresYT.Text;
+
+            if (string.IsNullOrEmpty(nazwa) || nazwa.Length < 3)
+            {
+                MessageBox.Show("Nazwa producenta musi mieć co najmniej 3 znaki.");
+                return false;
+            }
+
+            if (!Regex.IsMatch(kodPocztowy, @"^\d{2}-\d{3}$"))
+            {
+                MessageBox.Show("Kod pocztowy musi mieć format XX-XXX.");
+                return false;
+            }
+
+            if (!Regex.IsMatch(adresX, @"^[a-zA-Z\s\u0100-\u017F\u00F3\u0119\u0105\u0142]+$"))
+            {
+                MessageBox.Show("Nierawidłowy adres.");
+                return false;
+            }
+
+            if (!Regex.IsMatch(adresY, @"^\d+$"))
+            {
+                MessageBox.Show("Nierawidłowy adres.");
+                return false;
+            }
+
             return true;
         }
-        
+
+        private bool IsUniqueProducerName(string name)
+        {
+            var sql = "SELECT COUNT(*) FROM \"producenci\" WHERE \"nazwa\" = :name AND \"producent_id\" != :id";
+            try
+            {
+                using (var command = new OracleCommand(sql, App.Con))
+                {
+                    command.Parameters.Add(new OracleParameter("name", name));
+                    command.Parameters.Add(new OracleParameter("id", producerId));
+                    var count = Convert.ToInt32(command.ExecuteScalar());
+                    return count == 0;
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Wystąpił błąd podczas sprawdzania unikalności nazwy producenta: " + exception.Message);
+                return false;
+            }
+        }
+
         private void UpdateProducer()
         {
             try

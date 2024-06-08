@@ -53,19 +53,7 @@ namespace bazy3.MVVM.view.ProducentView
                 MessageBox.Show("Nowy przedmiot został dodany.");
                 App.MainVm.CurrentView = new MyProductsView();
             }
-            else
-            {
-                MessageBox.Show("Wprowadź poprawne dane.");
-            }
         }
-
-        private bool ValidateFields()
-        {
-           
-
-            return true;
-        }
-
         private void InsertProduct()
         {
             try
@@ -105,6 +93,34 @@ namespace bazy3.MVVM.view.ProducentView
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             App.MainVm.CurrentView = new MyProductsView();
+        }
+        
+        private bool ValidateFields()
+        {
+            var nazwaT = (TextBox)Nazwa.Template.FindName("input", Nazwa);
+            var cenaXT = (TextBox)CenaX.Template.FindName("input", CenaX);
+            var cenaYT = (TextBox)CenaY.Template.FindName("input", CenaY);
+            var kategoriaT = (TextBox)Kategoria.Template.FindName("input", Kategoria);
+
+            if (string.IsNullOrWhiteSpace(nazwaT.Text) || string.IsNullOrWhiteSpace(cenaXT.Text) || string.IsNullOrWhiteSpace(cenaYT.Text) || string.IsNullOrWhiteSpace(kategoriaT.Text))
+            {
+                MessageBox.Show("Wszystkie pola są wymagane.");
+                return false;
+            }
+            
+            if (!decimal.TryParse(cenaXT.Text, out _))
+            {
+                MessageBox.Show("Pierwsza wartość musi być liczbą.");
+                return false;
+            }
+
+            if (cenaYT.Text.Length > 3)
+            {
+                MessageBox.Show("Waluta nie może mieć więcej niż 3 litery.");
+                return false;
+            }
+
+            return true;
         }
     }
 }

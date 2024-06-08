@@ -52,7 +52,7 @@
                 </RadioButton>
                 <RadioButton Style="{StaticResource UserMenuButton}"
                              Command="{Binding DiscoveryViewCommand}"
-                             Tag="blue">
+                             Tag="aqua">
 
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="ShoppingCart" Style="{StaticResource MenuButtonIcon}" />
@@ -89,14 +89,6 @@
 
             </StackPanel>
 
-            <!-- <TextBox Width="250" Height="40" -->
-            <!--          VerticalAlignment="Center" -->
-            <!--          HorizontalAlignment="Left" -->
-            <!--          Margin="5" -->
-            <!--          Grid.Column="1" -->
-            <!--          Style="{StaticResource MoodernTextBox}"/> -->
-
-
             <Button Grid.Row="0" Grid.Column="1"
                     HorizontalAlignment="Right"
                     Style="{StaticResource TurnOffButton}"
@@ -111,7 +103,7 @@
                     Click="Quit"
                     Style="{StaticResource TurnOffButton}"
                     Margin="0,0,10,0">
-                <Image Source="../images/icons8-exit-50.png" />
+                <fa:ImageAwesome Icon="Close" Foreground="White"/>
             </Button>
 
             <ContentControl Grid.Row="1" Grid.Column="1"

@@ -33,8 +33,6 @@ namespace bazy3.MVVM.view.AdminView
                     {
                         while (reader.Read())
                         {
-                            Console.WriteLine("keks");
-
                             SelectedUser = new Klienci
                             {
                                 KlientId = reader.GetInt32(0),
@@ -62,15 +60,70 @@ namespace bazy3.MVVM.view.AdminView
                 MessageBox.Show("Dane klienta zostały zaktualizowane.");
                 App.MainVm.CurrentView = new UsersView();
             }
-            else
-            {
-                MessageBox.Show("Wprowadź poprawne dane.");
-            }
         }
         
         private bool ValidateFields()
         {
+            var imieT = (TextBox)Imie.Template.FindName("input", Imie);
+            var nazwiskoT = (TextBox)Nazwisko.Template.FindName("input", Nazwisko);
+            var peselT = (TextBox)Pesel.Template.FindName("input", Pesel);
+            var emailT = (TextBox)Email.Template.FindName("input", Email);
+            var nrTelT = (TextBox)NrTel.Template.FindName("input", NrTel);
+
+            if (string.IsNullOrEmpty(imieT.Text) || imieT.Text.Length < 2)
+            {
+                MessageBox.Show("Imię musi mieć co najmniej 2 znaki.");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(nazwiskoT.Text) || nazwiskoT.Text.Length < 2)
+            {
+                MessageBox.Show("Nazwisko musi mieć co najmniej 2 znaki.");
+                return false;
+            }
+
+            if (!IsPeselValid(peselT.Text))
+            {
+                MessageBox.Show("Nieprawidłowy numer PESEL.");
+                return false;
+            }
+
+            if (!IsValidEmail(emailT.Text))
+            {
+                MessageBox.Show("Nieprawidłowy adres email.");
+                return false;
+            }
+
+            if (!IsPhoneNumberValid(nrTelT.Text))
+            {
+                MessageBox.Show("Nieprawidłowy numer telefonu.");
+                return false;
+            }
+
             return true;
+        }
+
+        private bool IsPeselValid(string pesel)
+        {
+            return pesel.Length == 11 && long.TryParse(pesel, out _);
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private bool IsPhoneNumberValid(string phoneNumber)
+        {
+            return phoneNumber.Length == 9 && long.TryParse(phoneNumber, out _);
         }
         
         private void UpdateUser()

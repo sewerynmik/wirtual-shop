@@ -71,7 +71,7 @@
                                         Style="{StaticResource CardShopButton}"
                                         Click="AddItem" 
                                         CommandParameter="{Binding Id}">
-                                    <fa:ImageAwesome Icon="ShoppingBasket" />
+                                    <fa:ImageAwesome Icon="ShoppingBasket" Foreground="#918B9C"/>
                                 </Button>
                             </Grid>
                         </Border>
