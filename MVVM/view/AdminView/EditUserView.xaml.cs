@@ -136,7 +136,7 @@ namespace bazy3.MVVM.view.AdminView
                 var emailT = (TextBox)Email.Template.FindName("input", Email);
                 var nrTelT = (TextBox)NrTel.Template.FindName("input", NrTel);
 
-                var sql = "UPDATE \"klienci\" SET \"imie\" = :imie, \"nazwisko\" = :nazwisko, \"pesel\" = :pesel, \"email\" = :email, \"nr_tel\" = :nrTel WHERE \"klient_id\" = :id";
+                var sql = "BEGIN EDITUSER(:imie, :nazwisko, :pesel, :email, :nrTel, :id); END;";
                 using (var command = new OracleCommand(sql, App.Con))
                 {
                     command.Parameters.Add(new OracleParameter("imie", imieT.Text));

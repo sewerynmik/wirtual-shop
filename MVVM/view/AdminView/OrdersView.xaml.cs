@@ -51,22 +51,7 @@ public partial class OrdersView : UserControl
     {
         var id = (int)((Button)sender).CommandParameter;
         
-        var deleteZamPrzeSql = $"DELETE FROM \"zam_prze\" WHERE \"id_zam\" = :id";
-        try
-        {
-            using (var command = new OracleCommand(deleteZamPrzeSql, App.Con))
-            {
-                command.Parameters.Add(new OracleParameter("id", id));
-                command.ExecuteNonQuery();
-            }
-        }
-        catch (Exception exception)
-        {
-            MessageBox.Show(exception.Message);
-            return;
-        }
-        
-        var deleteProductSql = $"DELETE FROM \"zamowienia\" WHERE \"zamowienie_id\" = :id";
+        var deleteProductSql = $"BEGIN DELZAM(:id); END;";
         try
         {
             using (var command = new OracleCommand(deleteProductSql, App.Con))
@@ -75,7 +60,6 @@ public partial class OrdersView : UserControl
                 command.ExecuteNonQuery();
             }
 
-            // Usunięcie produktu z listy wyświetlanych produktów
             var itemToRemove = OrdersList.FirstOrDefault(item => item.ZamowienieId == id);
             if (itemToRemove != null)
             {

@@ -29,7 +29,7 @@ public partial class ChangingEmailView : UserControl
                 return;
             }
 
-            var sql = "UPDATE \"klienci\" SET \"email\" = :email WHERE \"klient_id\" = :userId";
+            var sql = "BEGIN EDITEMAIL(:email, :userId); END;";
 
 
             using (var command = new OracleCommand(sql, App.Con))

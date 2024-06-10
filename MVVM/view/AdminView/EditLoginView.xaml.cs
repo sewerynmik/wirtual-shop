@@ -81,7 +81,7 @@ namespace bazy3.MVVM.view.AdminView
                 var loginT = (TextBox)LoginName.Template.FindName("input", LoginName);
                 var hasloPB = (TextBox)Haslo.Template.FindName("input", Haslo);
 
-                var sql = "UPDATE \"login\" SET \"login\" = :login, \"haslo\" = :haslo WHERE \"klient_id\" = :id";
+                var sql = "BEGIN EDITLOGIN(:login, :haslo, :id); END;";
                 using (var command = new OracleCommand(sql, App.Con))
                 {
                     command.Parameters.Add(new OracleParameter("login", loginT.Text));

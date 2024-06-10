@@ -75,7 +75,7 @@ public partial class OrderView : UserControl
                 if (result != null)
                 {
                     int liczbaPrzedmiotow = Convert.ToInt32(result);
-                    LiczbaPrzedmiotowTextBox.Text = liczbaPrzedmiotow.ToString(); // Wyświetlenie liczby przedmiotów w TextBoxie
+                    LiczbaPrzedmiotowTextBox.Text = liczbaPrzedmiotow.ToString(); 
                 }
                 else
                 {

@@ -144,7 +144,7 @@ namespace bazy3.MVVM.view.AdminView
                 var adresXT = (TextBox)AdresX.Template.FindName("input", AdresX);
                 var adresYT = (TextBox)AdresY.Template.FindName("input", AdresY);
 
-                var sql = "UPDATE \"producenci\" SET \"nazwa\" = :nazwa, \"kod_pocztowy\" = :kodPocztowy, \"adres\" = ADRES(:adresX, :adresY) WHERE \"producent_id\" = :id";
+                var sql = "BEGIN EDITPRODUCER(:nazwa, :kodPocztowy, :adresX, :adresY, :id); END;";
                 using (var command = new OracleCommand(sql, App.Con))
                 {
                     command.Parameters.Add(new OracleParameter("nazwa", nazwaT.Text));

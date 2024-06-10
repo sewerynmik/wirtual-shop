@@ -15,7 +15,6 @@
                       DisplayMemberPath="Nazwa"
                       SelectedValuePath="ProducentId"
                       SelectedValue="{Binding NewProduct.ProducentId, Mode=TwoWay}" 
-                      Name="Producencik"
                       Style="{StaticResource ModernComboBox}"/>
 
             <TextBlock Text="Cena:" Style="{StaticResource EditTextBlock}" Margin="0 0 5 0"/>

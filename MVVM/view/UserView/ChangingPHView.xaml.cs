@@ -27,7 +27,7 @@ public partial class ChangingPHView : UserControl
                 return;
             }
 
-            var sql = $"UPDATE \"klienci\" SET \"nr_tel\" = :nr_tel WHERE \"klient_id\" = :userId";
+            var sql = $"BEGIN EDITPHONENUMBER(:nr_tel, :userId); END;";
 
             using (var command = new OracleCommand(sql, App.Con))
             {

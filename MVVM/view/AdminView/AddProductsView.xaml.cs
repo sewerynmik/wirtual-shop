@@ -118,7 +118,7 @@ namespace bazy3.MVVM.view.AdminView
                 var kategoriaT = (TextBox)Kategoria.Template.FindName("input", Kategoria);
                 var kategoria = kategoriaT.Text;
 
-                var sql = "INSERT INTO \"przedmioty\" (\"nazwa\", \"producent_id\", \"cena\", \"kategoria\") VALUES (:nazwa, :producentId, CENA(:cenaX, :cenaY), :kategoria)";
+                var sql = "BEGIN ADDPRODUCT(:nazwa, :producentId, :cenaX, :cenaY, :kategoria); END;";
                 using (var command = new OracleCommand(sql, App.Con))
                 {
                     command.Parameters.Add(new OracleParameter("nazwa", nazwa));

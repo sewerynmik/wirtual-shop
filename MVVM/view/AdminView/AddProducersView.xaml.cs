@@ -110,7 +110,7 @@ namespace bazy3.MVVM.view.AdminView
                 var adresYT = (TextBox)AdresY.Template.FindName("input", AdresY);
                 int adresY = Convert.ToInt32(adresYT.Text);
 
-                var sql = "INSERT INTO \"producenci\" (\"nazwa\", \"kod_pocztowy\", \"adres\") VALUES (:nazwa, :kodPocztowy, ADRES(:adresX,:adresY))";
+                var sql = "BEGIN ADDPRODUCER(:nazwa, :kodPocztowy, :adresX,:adresY); END;";
                 using (var command = new OracleCommand(sql, App.Con))
                 {
                     command.Parameters.Add(new OracleParameter("nazwa", nazwa));

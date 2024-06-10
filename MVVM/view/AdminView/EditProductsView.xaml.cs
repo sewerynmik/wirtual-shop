@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -21,6 +22,7 @@ namespace bazy3.MVVM.view.AdminView
         }
 
         public Przedmioty SelectedProduct { get; set; } = new Przedmioty();
+        
 
         private void LoadProductData(int id)
         {
@@ -123,11 +125,10 @@ namespace bazy3.MVVM.view.AdminView
                 var cenaYT = (TextBox)CenaY.Template.FindName("input", CenaY);
                 var kategoriaT = (TextBox)Kategoria.Template.FindName("input", Kategoria);
 
-                var sql = "UPDATE \"przedmioty\" SET \"nazwa\" = :nazwa, \"producent_id\" = :producentId, \"cena\" = CENA(:cenaX, :cenaY), \"kategoria\" = :kategoria WHERE \"przedmiot_id\" = :id";
+                var sql = "BEGIN EDITPRODUCT(:nazwa, :cenaX, :cenaY, :kategoria, :id); END;";
                 using (var command = new OracleCommand(sql, App.Con))
                 {
                     command.Parameters.Add(new OracleParameter("nazwa", nazwaT.Text));
-                    command.Parameters.Add(new OracleParameter("producentId", SelectedProduct.ProducentId));
                     command.Parameters.Add(new OracleParameter("cenaX", cenaXT.Text));
                     command.Parameters.Add(new OracleParameter("cenaY", cenaYT.Text));
                     command.Parameters.Add(new OracleParameter("kategoria", kategoriaT.Text));

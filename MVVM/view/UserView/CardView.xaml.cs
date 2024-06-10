@@ -123,13 +123,15 @@ public partial class CardView : UserControl
             throw;
         }
 
-        sql =
-            $"INSERT INTO \"zamowienia\" (\"zamowienie_id\", \"nr_zamowienia\", \"klient_id\") VALUES ({id}, {kod}, {App.UserId})";
+        sql = $"BEGIN ADDZAM(:id_zam, :nr_zam, :user_id); END;";
 
         try
         {
             using (var command = new OracleCommand(sql, App.Con))
             {
+                command.Parameters.Add(new OracleParameter("id_zam", id));
+                command.Parameters.Add(new OracleParameter("nr_zam", kod));
+                command.Parameters.Add(new OracleParameter("user_id", App.UserId));
                 command.ExecuteNonQuery();
             }
 

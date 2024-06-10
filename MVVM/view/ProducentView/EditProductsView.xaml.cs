@@ -146,8 +146,8 @@ namespace bazy3.MVVM.view.ProducentView
                 
                 var kategoriaT = (TextBox)Kategoria.Template.FindName("input", Kategoria);
                 var kategoria = kategoriaT.Text;
-                
-                var sql = "UPDATE \"przedmioty\" SET \"nazwa\" = :nazwa, \"cena\" = CENA(:cenaX, :cenaY), \"kategoria\" = :kategoria WHERE \"przedmiot_id\" = :id";
+
+                var sql = "BEGIN EDITPRODUCT(:nazwa, :cenaX, :cenaY, :kategoria, :id); END;";
                 using (var command = new OracleCommand(sql, App.Con))
                 {
                     command.Parameters.Add(new OracleParameter("nazwa", nazwa));

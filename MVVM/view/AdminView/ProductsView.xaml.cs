@@ -87,7 +87,7 @@ public partial class ProductsView : UserControl
             return;
         }
 
-        var sql = $"DELETE FROM \"przedmioty\" WHERE \"przedmiot_id\" = :id";
+        var sql = $"BEGIN DELPRODUCT(:id); END;";
         try
         {
             using (var command = new OracleCommand(sql, App.Con))
@@ -142,7 +142,7 @@ public partial class ProductsView : UserControl
     
     private void ZwiekszCeneProcentowoButton_Click(object sender, RoutedEventArgs e)
     {
-        WywolajProcedureZwiekszCeneProcentowo(5); // Wywołanie procedury z wartością 5%
+        WywolajProcedureZwiekszCeneProcentowo(5);
     }
 
     private void WywolajProcedureZwiekszCeneProcentowo(int procent)

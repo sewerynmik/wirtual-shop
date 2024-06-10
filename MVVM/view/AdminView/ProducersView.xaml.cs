@@ -92,7 +92,7 @@ public partial class ProducersView : UserControl
             return;
         }
 
-        var sqlDeleteProducent = "DELETE FROM \"producenci\" WHERE \"producent_id\" = :id";
+        var sqlDeleteProducent = "BEGIN DELPRODUCER(:id); END;";
 
         try
         {

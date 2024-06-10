@@ -87,23 +87,7 @@ namespace bazy3.MVVM.view.AdminView
                 return;
             }
 
-            var deleteLoginSql = $"DELETE FROM \"login\" WHERE \"klient_id\" = :id";
-            try
-            {
-                using (var command = new OracleCommand(deleteLoginSql, App.Con))
-                {
-                    command.Parameters.Add(new OracleParameter("id", id));
-
-                    command.ExecuteNonQuery();
-                }
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-                return;
-            }
-
-            var deleteClientSql = $"DELETE FROM \"klienci\" WHERE \"klient_id\" = :id";
+            var deleteClientSql = $"BEGIN DELUSER(:id); END;";
             try
             {
                 using (var command = new OracleCommand(deleteClientSql, App.Con))
@@ -123,9 +107,6 @@ namespace bazy3.MVVM.view.AdminView
                 MessageBox.Show(exception.Message);
             }
         }
-
-
-
 
         private void EditLogin(object sender, RoutedEventArgs e)
         {
